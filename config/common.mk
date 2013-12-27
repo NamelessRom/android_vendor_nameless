@@ -4,6 +4,15 @@ PRODUCT_BRAND ?= nameless
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
+# get device client id base
+ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-google
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
+endif
+
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
