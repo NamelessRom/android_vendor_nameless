@@ -10,7 +10,8 @@ PRODUCT_PACKAGES += \
 # Additional apps
 PRODUCT_PACKAGES += \
 	Apollo \
-	DashClock
+	DashClock \
+	DSPManager
 
 PRODUCT_PACKAGES += \
 	CellBroadcastReceiver
