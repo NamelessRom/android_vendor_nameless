@@ -12,6 +12,11 @@ PRODUCT_PACKAGES += \
 	Apollo \
 	DashClock
 
+ifneq ($(USE_TORCH),)
+PRODUCT_PACKAGES += \
+	Flashlight
+endif
+
 PRODUCT_PACKAGES += \
 	CellBroadcastReceiver
 
