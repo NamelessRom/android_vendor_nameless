@@ -28,3 +28,7 @@ PRODUCT_PACKAGES += \
 	powertop \
 	lsof
 
+ifneq ($(USE_TORCH),)
+PRODUCT_PACKAGES += \
+	Flashlight
+endif
