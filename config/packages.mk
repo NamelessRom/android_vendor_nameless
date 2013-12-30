@@ -2,7 +2,6 @@
 PRODUCT_PACKAGES += \
 	Development \
 	LatinIME \
-	VideoEditor \
 	VoiceDialer \
 	SoundRecorder \
 	Basic
