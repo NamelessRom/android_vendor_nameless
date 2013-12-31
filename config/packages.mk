@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
 	Apollo \
 	DashClock \
 	DSPManager \
+    Launcher3 \
 	libcyanogen-dsp \
 	audio_effects.conf
 
