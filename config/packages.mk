@@ -1,21 +1,22 @@
 # Additional packages
 PRODUCT_PACKAGES += \
-	Development \
-	LatinIME \
-	VoiceDialer \
-	SoundRecorder \
-	Basic
+    Development \
+    LatinIME \
+    VoiceDialer \
+    SoundRecorder \
+    Basic
 
 # Additional apps
 PRODUCT_PACKAGES += \
-	Apollo \
-	DashClock \
-	DSPManager \
-	libcyanogen-dsp \
-	audio_effects.conf
+    Apollo \
+    DashClock \
+    DSPManager \
+    Launcher3 \
+    libcyanogen-dsp \
+    audio_effects.conf
 
 PRODUCT_PACKAGES += \
-	CellBroadcastReceiver
+    CellBroadcastReceiver
 
 # Additional tools
 PRODUCT_PACKAGES += \
@@ -62,5 +63,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifneq ($(USE_TORCH),)
 PRODUCT_PACKAGES += \
-	Flashlight
+    Flashlight
 endif
