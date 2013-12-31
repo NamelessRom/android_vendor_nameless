@@ -10,23 +10,52 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Apollo \
 	DashClock \
-	DSPManager
+	DSPManager \
+	libcyanogen-dsp \
+	audio_effects.conf
 
 PRODUCT_PACKAGES += \
 	CellBroadcastReceiver
 
 # Additional tools
 PRODUCT_PACKAGES += \
-	openvpn \
-	e2fsck \
-	mke2fs \
-	tune2fs \
-	bash \
-	vim \
-	nano \
-	htop \
-	powertop \
-	lsof
+    openvpn \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    bash \
+    vim \
+    nano \
+    htop \
+    powertop \
+    lsof \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    sqlite3 \
+    strace
+
+# Extras
+PRODUCT_PACKAGES += \
+    procmem \
+    procrank
+
+# Superuser
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+
+######
+# Additional Extras, enabled via flags
+######
 
 ifneq ($(USE_TORCH),)
 PRODUCT_PACKAGES += \
