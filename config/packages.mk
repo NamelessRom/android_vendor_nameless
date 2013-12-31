@@ -47,15 +47,9 @@ PRODUCT_PACKAGES += \
     procrank
 
 # Superuser
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 PRODUCT_PACKAGES += \
     Superuser \
     su
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1
 
 ######
 # Additional Extras, enabled via flags

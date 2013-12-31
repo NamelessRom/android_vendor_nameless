@@ -1,5 +1,8 @@
 PRODUCT_BRAND ?= nameless
 
+# Superuser
+SUPERUSER_EMBEDDED := true
+
 # bootanimation
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
