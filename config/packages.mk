@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     VoiceDialer \
     SoundRecorder \
-    Basic
+    Basic \
+    libemoji
 
 # Additional apps
 PRODUCT_PACKAGES += \
@@ -50,6 +51,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Superuser \
     su
+
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 ######
 # Additional Extras, enabled via flags
