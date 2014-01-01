@@ -2,6 +2,7 @@ PRODUCT_BRAND ?= nameless
 
 # Superuser
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # bootanimation
 PRODUCT_COPY_FILES += \
@@ -65,6 +66,9 @@ PRODUCT_COPY_FILES += \
 
 # Additional packages
 -include vendor/nameless/config/packages.mk
+
+# T-Mobile theme engine
+include vendor/cm/config/themes_common.mk
 
 # Versioning
 -include vendor/nameless/config/version.mk
