@@ -31,6 +31,8 @@ else
 endif
 endif
 
+NAMELESS_VERSION := $(ROM_VERSION)
+
 # Apply it to build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.modversion=NamelessROM-$(ROM_VERSION) \
