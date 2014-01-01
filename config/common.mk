@@ -2,6 +2,7 @@ PRODUCT_BRAND ?= nameless
 
 # Superuser
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # bootanimation
 PRODUCT_COPY_FILES += \
@@ -59,12 +60,29 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/init.local.rc:root/init.nameless.rc
 
+# Compcache/Zram support
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/bin/compcache:system/bin/compcache \
+    vendor/cm/prebuilt/common/bin/handle_compcache:system/bin/handle_compcache
+
+# Bring in camera effects
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/cm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+
+# Enable wireless Xbox 360 controller support
+PRODUCT_COPY_FILES += \
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
+
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Additional packages
 -include vendor/nameless/config/packages.mk
+
+# T-Mobile theme engine
+include vendor/nameless/config/themes_common.mk
 
 # Versioning
 -include vendor/nameless/config/version.mk
