@@ -87,5 +87,8 @@ include vendor/nameless/config/themes_common.mk
 # Versioning
 -include vendor/nameless/config/version.mk
 
+# Private Makefile
+-include vendor/nameless/private/common.mk
+
 # Add our overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/nameless/overlay/common
