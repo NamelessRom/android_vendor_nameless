@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
+    DeviceControl \
     DSPManager \
     Launcher3 \
     libcyanogen-dsp \
