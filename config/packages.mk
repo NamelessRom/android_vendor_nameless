@@ -11,7 +11,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
-    DeviceControl \
     DSPManager \
     Launcher3 \
     libcyanogen-dsp \
@@ -64,6 +63,11 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
+
+ifneq ($(USE_DEVICE_CONTROL),)
+PRODUCT_PACKAGES += \
+    DeviceControl \
+endif
 
 ifneq ($(USE_TORCH),)
 PRODUCT_PACKAGES += \
