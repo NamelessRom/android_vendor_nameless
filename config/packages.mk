@@ -5,6 +5,9 @@ PRODUCT_PACKAGES += \
     VoiceDialer \
     SoundRecorder \
     Basic \
+    QuickSearchBox \
+    LiveWallpapersPicker \
+    PhotoTable \
     libemoji
 
 # Additional apps
@@ -64,12 +67,26 @@ PRODUCT_PACKAGES += \
 # Additional Extras, enabled via flags
 ######
 
+# Device Control
 ifneq ($(USE_DEVICE_CONTROL),)
 PRODUCT_PACKAGES += \
     DeviceControl
 endif
 
+# Torch aka Flashlight
 ifneq ($(USE_TORCH),)
 PRODUCT_PACKAGES += \
     Flashlight
+endif
+
+# Live Wallpapers
+ifneq ($(USE_ALL_LIVEWALLPAPERS),)
+PRODUCT_PACKAGES += \
+    Galaxy4 \
+    HoloSpiralWallpaper \
+    LiveWallpapers \
+    MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
+    VisualizationWallpapers
 endif
