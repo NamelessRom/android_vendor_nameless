@@ -1,4 +1,14 @@
+# H
+add_lunch_combo nameless_hammerhead-userdebug
 # J
+add_lunch_combo nameless_jflteatt-userdebug
+add_lunch_combo nameless_jfltecan-userdebug
+add_lunch_combo nameless_jfltecri-userdebug
+add_lunch_combo nameless_jfltecsp-userdebug
+add_lunch_combo nameless_jfltespr-userdebug
+add_lunch_combo nameless_jfltetmo-userdebug
+add_lunch_combo nameless_jflteusc-userdebug
+add_lunch_combo nameless_jfltevzw-userdebug
 add_lunch_combo nameless_jfltexx-userdebug
 # P
 add_lunch_combo omni_p970-userdebug
