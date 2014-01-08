@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
+    DeviceControl \
     DSPManager \
     Launcher3 \
     libcyanogen-dsp \
@@ -67,20 +68,14 @@ PRODUCT_PACKAGES += \
 # Additional Extras, enabled via flags
 ######
 
-# Device Control
-ifneq ($(USE_DEVICE_CONTROL),)
-PRODUCT_PACKAGES += \
-    DeviceControl
-endif
-
 # Torch aka Flashlight
-ifneq ($(USE_TORCH),)
+ifeq ($(USE_TORCH),true)
 PRODUCT_PACKAGES += \
     Flashlight
 endif
 
 # Live Wallpapers
-ifneq ($(USE_ALL_LIVEWALLPAPERS),)
+ifeq ($(USE_ALL_LIVEWALLPAPERS),true)
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
