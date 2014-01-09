@@ -9,13 +9,29 @@
 # cyanogen - shade@chemlab.org
 # ChrisSoyars - me@ctso.me
 
+OUT_TARGET_HOST=$(uname -a | grep Darwin)
+if [ -z "$OUT_TARGET_HOST" ]
+then
+    OUT_TARGET_HOST=linux-x86
+else
+    OUT_TARGET_HOST=darwin-x86
+fi
+
+# out/ dir defined elsewhere
+if [ ! -z $OUT_DIR_COMMON_BASE ]; then
+	TREE_NAME=`basename $ANDROID_BUILD_TOP`
+	OUT_DIR=$OUT_DIR_COMMON_BASE/$TREE_NAME
+else
+	OUT_DIR=$ANDROID_BUILD_TOP/out
+fi
+
+. $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
+
 set -e
 QUIET=1
 BASE=`pwd`
 BRUTECRUSH="-brute"
 TMPDIR=/tmp/opticharge-$$
-
-. $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
 
 if [ -z "$BRUTE_PNGCRUSH" ]
 then
@@ -84,7 +100,7 @@ fi
 if [ -e "$1" ];
 then
     NAME=`basename $1`;
-    echo -e $CL_YLW"Optimize:"$CL_RST" $NAME..";
+    echo -e $CL_CYN"Optimizing"$CL_RST" $NAME...";
 
     if [ "$2" != "" ];
     then
@@ -92,19 +108,19 @@ then
         KEY=build/target/product/security/$2.pk8
         if [ ! -f "$ANDROID_BUILD_TOP/$CERT" ];
         then
-            echo -e $CL_RED"$CERT does not exist!"$CL_RST;
+            echo -e $CL_RED"$CERT does not exist!";$CL_RST
             exit 1;
         fi
     else
         APKINFO=`grep "name=\"$NAME\"" $APKCERTS`;
-        [ $QUIET ] || echo "APKINFO: $APKINFO";
+        [ $QUIET ] || echo -e "APKINFO: $APKINFO";
         if [ "$APKINFO" = "" ];
         then
-            echo -e $CL_RED"No apk info for $NAME"$CL_RST;
+            echo -e $CL_RED"No apk info for $NAME";$CL_RST
             exit 1;
         fi
-        CERT=`echo $APKINFO | awk {'print $2'} | cut -f 2 -d "=" | tr -d "\""`;
-        KEY=`echo $APKINFO | awk {'print $3'} | cut -f 2 -d "=" | tr -d "\""`;
+        CERT=`echo -e $APKINFO | awk {'print $2'} | cut -f 2 -d "=" | tr -d "\""`;
+        KEY=`echo -e $APKINFO | awk {'print $3'} | cut -f 2 -d "=" | tr -d "\""`;
         if [ "$CERT" = "" ];
         then
             echo -e $CL_RED"Unable to find certificate for $NAME"$CL_RST
@@ -112,7 +128,7 @@ then
         fi
         if [ "$CERT" = "PRESIGNED" ];
         then
-            echo -e $CL_YLW"$NAME is presigned, skipping"$CL_RST
+            echo -e $CL_GRN"$NAME is presigned, skipping"$CL_RST
             exit 1;
         fi
     fi
@@ -126,19 +142,19 @@ then
     unzip -q $BASE/$1
     for x in `find . -name "*.png" | grep -v "\.9.png$" | tr "\n" " "`
     do
-        [ $QUIET ] || echo -e $CL_YLW"Crushing $x"$CL_RST
+        [ $QUIET ] || echo -e $CL_GRN"Crushing $x"$CL_RST
         optimize_png $x
     done
     cp $BASE/$1 $BASE/$1.old
 
-    [ $QUIET ] || echo -e $CL_YLW"Repacking apk.."$CL_RST
+    [ $QUIET ] || echo -e $CL_GRN"Repacking apk.."$CL_RST
     aapt p -0 .dat -0 .dict -0 .arsc -F $NAME .
-    
-    [ $QUIET ] || echo -e $CL_YLW"Resigning with cert: `echo $CERT`"$CL_RST
 
-    [ $QUIET ] || echo java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
-    java -jar $ANDROID_HOST_OUT/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
-    [ $QUIET ] || echo -e $CL_YLW"Zipaligning.."$CL_RST
+    [ $QUIET ] || echo -e $CL_YLW"Resigning with cert: `echo -e $CERT`"$CL_RST
+
+    [ $QUIET ] || echo -e java -jar $OUT_DIR/host/$OUT_TARGET_HOST/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
+    java -jar $OUT_DIR/host/$OUT_TARGET_HOST/framework/signapk.jar $ANDROID_BUILD_TOP/$CERT $ANDROID_BUILD_TOP/$KEY $NAME signed_$NAME
+    [ $QUIET ] || echo -e $CL_GRN"Zipalign.."$CL_RST
     zipalign -f 4 signed_$NAME $BASE/$1
     if [ ! $QUIET ]; then
         ls -l $BASE/$1.old
@@ -146,6 +162,5 @@ then
     fi
     rm $BASE/$1.old
 else
-    echo "Usage: $0 [apk file]"
+    echo -e "Usage: $0 [apk file]"
 fi
-
