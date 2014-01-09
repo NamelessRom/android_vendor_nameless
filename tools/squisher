@@ -6,7 +6,7 @@
 # AOKP
 
 # Uncomment to debug
-#set -x
+# set -x
 
 . $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
 
@@ -43,9 +43,21 @@ elif [ "$TARGET_BUILD_VARIANT" = "userdebug" ]; then
 else
     OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-$TARGET_BUILD_VARIANT.$USER.zip
 fi
+
 if [ ! -f "$OTAPACKAGE" ]; then
-	echo -e "$OTAPACKAGE doesn't exist!";
-	exit 1
+	isexisting=0
+	# Check for build number, jenkins likes to set it and the otapackage location doesnt match
+	if [ $BUILD_NUMBER ]; then
+		# remove .zip
+		OTAPACKAGE=${OTAPACKAGE:0:-4}-$BUILD_NUMBER.zip
+		if [ -f "$OTAPACKAGE" ]; then
+			isexisting=1
+		fi
+	fi
+	if [ "$isexisting" -eq "0" ]; then
+        echo -e "$OTAPACKAGE doesn't exist!";
+	    exit 1
+	fi
 fi
 
 OPTICHARGER=$ANDROID_BUILD_TOP/vendor/nameless/tools/opticharger
