@@ -74,6 +74,11 @@ PRODUCT_PACKAGES += \
     Flashlight
 endif
 
+ifneq ($(USE_SIM_TOOLKIT),)
+PRODUCT_PACKAGES += \
+    Stk
+endif
+
 # Live Wallpapers
 ifeq ($(USE_ALL_LIVEWALLPAPERS),true)
 PRODUCT_PACKAGES += \
