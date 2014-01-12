@@ -1,5 +1,7 @@
 # H
 add_lunch_combo nameless_hammerhead-userdebug
+# I
+add_lunch_combo nameless_i9300-userdebug
 # J
 add_lunch_combo nameless_jflteatt-userdebug
 add_lunch_combo nameless_jfltecan-userdebug
