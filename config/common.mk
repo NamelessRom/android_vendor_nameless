@@ -95,3 +95,13 @@ include vendor/nameless/config/themes_common.mk
 
 # Add our overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/nameless/overlay/common
+
+# Selective SPN list for operator number who has the problem.
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Mms \
+    Stk \
+    CellBroadcastReceiver \
