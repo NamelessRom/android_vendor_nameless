@@ -22,3 +22,5 @@ add_lunch_combo nameless_ls980-userdebug
 add_lunch_combo nameless_p970-userdebug
 #V
 add_lunch_combo nameless_vs980-userdebug
+#Y
+add_lunch_combo nameless_ypg1-userdebug
