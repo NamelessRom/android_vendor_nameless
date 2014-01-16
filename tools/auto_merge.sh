@@ -23,8 +23,10 @@
 
 # our array of repo names, which need to be merged
 # TODO: needs to be in sync with android manifest
-repos=( "development" "frameworks_av" "frameworks_native" "frameworks_opt_telephony" "hardware_broadcom_wlan" "hardware_qcom_audio-caf" "hardware_qcom_display-caf" "hardware_qcom_media-caf" "packages_apps_Browser" "packages_apps_Camera2" "packages_apps_DashClock" "packages_apps_DeskClock" "packages_apps_Dialer" "packages_apps_Gallery2" "packages_apps_InCallUI" "packages_apps_Mms" "packages_inputmethods_LatinIME" "packages_services_Telephony" "system_core" "system_media" )
+repos=( "development" "frameworks_av" "frameworks_native" "frameworks_opt_telephony" "hardware_broadcom_wlan" "hardware_qcom_audio-caf" "hardware_qcom_display-caf" "hardware_qcom_media-caf" "packages_apps_Browser" "packages_apps_Camera2" "packages_apps_DeskClock" "packages_apps_Dialer" "packages_apps_Gallery2" "packages_apps_InCallUI" "packages_apps_Mms" "packages_inputmethods_LatinIME" "packages_services_Telephony" "system_core" "system_media" )
 
+# Save Username
+username=$1
 # Our root of the android source WITH trailing slash
 rootdir=~/android/
 # Save current directory
@@ -63,6 +65,13 @@ function gerrit_upload()
 
 ########################################################################
 
+# Check for right usage
+if [ -z $1 ]; then
+	printf "\nUsage: ${BASH_SOURCE[0]} username\n\n"
+	printf "Example: ${BASH_SOURCE[0]} Evisceration\n\n"
+	exit 1
+fi
+
 # Start our magic
 
 printf "\n[!] Checking following repos:\n\n"
@@ -71,10 +80,18 @@ printf "\n========================================\n\n"
 
 for i in "${repos[@]}"
 do
+	# save and build remote name
+	addremote=https://github.com/CyanogenMod/android_$i
+	addgerritremote=ssh://$username@gerrit.nameless-rom.org:29418/android_$i
 	# build the target dir
 	i=$rootdir$(echo $i | tr "_" "/")
 	# change directory, go into it
 	cd $i
+	# remove and add remote name
+	git remote rm $remoteremotename
+	git remote add $remoteremotename $addremote
+	git remote rm $gerritremote
+	git remote add $gerritremote $addgerritremote
 	# checking out on a temporary branch and clean up
 	git checkout --orphan $tmpbranchname
 	git branch -D $branchname
