@@ -111,6 +111,8 @@ do
 	git merge $remotebranchname
 	# upload that shit for review
 	gerrit_upload
+	# Abort rebase, just in case ...
+	git rebase --abort
 	# Cleaning up the branch again
 	git reset --hard $remotename/$branchname
 	# relax a bit and get some space
