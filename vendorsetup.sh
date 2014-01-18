@@ -18,6 +18,8 @@ add_lunch_combo nameless_jfltevzw-userdebug
 add_lunch_combo nameless_jfltexx-userdebug
 #L
 add_lunch_combo nameless_ls980-userdebug
+#N
+add_lunch_combo nameless_n7000-userdebug
 # P
 add_lunch_combo nameless_p970-userdebug
 #V
