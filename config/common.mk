@@ -60,11 +60,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/init.local.rc:root/init.nameless.rc
 
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/bin/compcache:system/bin/compcache \
-    vendor/nameless/prebuilt/bin/handle_compcache:system/bin/handle_compcache
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/nameless/prebuilt/media/LMprec_508.emd:system/media/LMprec_508.emd \
