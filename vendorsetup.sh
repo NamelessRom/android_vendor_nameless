@@ -5,6 +5,7 @@ add_lunch_combo nameless_d802-userdebug
 # H
 add_lunch_combo nameless_hammerhead-userdebug
 # I
+add_lunch_combo nameless_i9100-userdebug
 add_lunch_combo nameless_i9300-userdebug
 # J
 add_lunch_combo nameless_jflteatt-userdebug
