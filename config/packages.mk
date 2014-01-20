@@ -8,6 +8,7 @@ PRODUCT_PACKAGES += \
     QuickSearchBox \
     LiveWallpapersPicker \
     PhotoTable \
+    UpdateCenter \
     libemoji
 
 # Additional apps
