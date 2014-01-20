@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
     DeviceControl \
     DSPManager \
     Flashlight \
+    KitKatWhite \
     Launcher3 \
     libcyanogen-dsp \
     audio_effects.conf
