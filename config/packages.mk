@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
     DashClock \
     DeviceControl \
     DSPManager \
+    Flashlight \
     Launcher3 \
     libcyanogen-dsp \
     audio_effects.conf
@@ -67,12 +68,6 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
-
-# Torch aka Flashlight
-ifeq ($(USE_TORCH),true)
-PRODUCT_PACKAGES += \
-    Flashlight
-endif
 
 # Live Wallpapers
 ifeq ($(USE_ALL_LIVEWALLPAPERS),true)
