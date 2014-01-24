@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     DSPManager \
     Flashlight \
     Launcher3 \
+    Trebuchet \
     libcyanogen-dsp \
     audio_effects.conf
 
