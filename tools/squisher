@@ -1,9 +1,10 @@
 #!/bin/bash
 #
-# Squish a CM otapackage for distribution
+# Squish a otapackage for distribution
 #
 # cyanogen
 # AOKP
+# Nameless
 
 # Uncomment to debug
 #set -x
@@ -88,7 +89,6 @@ rm -rf $REPACK
 mkdir -p $REPACK
 echo -e
 
-
 # Unpack the otapackage and opticharge all apks
 mkdir $REPACK/ota
 (
@@ -122,7 +122,6 @@ cd $REPACK/ota
 rm -rf $REPACK/parallel
 )
 
-
 if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	squash_opts="-force-uid 1000 -force-gid 1000 -no-progress -noappend -no-exports -no-recovery"
 	updater=$REPACK/ota/META-INF/com/google/android/updater-script
@@ -151,13 +150,11 @@ if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	$SED -i -e's,system/xbin/su,system/bin/su,g' -e'/xbin/d' $updater
 fi
 
-
 # Fix build.prop
 $SED -i \
 	-e '/ro\.kernel\.android\.checkjni/d' \
 	-e '/ro\.build\.type/s/eng/user/' \
 	$REPACK/ota/system/build.prop
-
 
 # Delete unnecessary binaries
 ( cd $REPACK/ota/system/bin; echo -e $DELETE_BINS | xargs rm -f; )
@@ -177,7 +174,7 @@ rm -rf $REPACK/ota/recovery
 #MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 VERSION=`sed -n -e'/ro.nameless.version/s/^.*=//p' $REPACK/ota/system/build.prop`
 export MODVERSION="nameless-"$VERSION
-OUTFILE=$OUT/$MODVERSION.zip
+export OUTFILE=$OUT/$MODVERSION.zip
 
 # Pack it up and sign
 echo -e $CL_CYN"Zipping package..."$CL_RST
@@ -185,7 +182,7 @@ echo -e $CL_CYN"Zipping package..."$CL_RST
 echo -e
 echo -e $CL_CYN"Signing package..."$CL_RST
 SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
-java -Xmx1024m \
+java -Xmx2048m \
 	-jar $OUT_DIR/host/$OUT_TARGET_HOST/framework/signapk.jar \
 	-w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
 	$REPACK/update.zip $OUTFILE
