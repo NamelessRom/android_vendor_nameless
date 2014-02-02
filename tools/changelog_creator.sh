@@ -20,13 +20,13 @@
 ##                                                                       ##
 ###########################################################################
 
+if [ $BUILD_IS_JENKINS ] && [ "$BUILD_IS_JENKINS" -eq 1 ]; then
+
 if [ -z $1 ] || [ -z $2 ]; then
     echo "Usage: ${BASH_SOURCE[0]} output.zip /path/to/output/folder/ [-v]"
     exit 1
 fi
 
-sdate=`date --date yesterday +"%m/%d/%Y"`
-cdate=`date +"%m_%d_%Y"`
 rdir=`pwd`
 if [[ $2 == "./" ]]; then
     ddir=$rdir
@@ -40,7 +40,7 @@ find $rdir -path $rdir/.repo -prune -o -name .git -print | sed 's/\/.git//g' | s
 do
     cd $line
     # Test to see if the repo needs to have a changelog written.
-    log=$(git log --pretty="%h - %an - %s" --no-merges --since=$sdate --date-order)
+    log=$(git log --pretty="%h - %an - %s" --no-merges --since="yesterday 02:00:00" --before="today 02:00:00" --date-order)
     project=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
     if [ -z "$log" ]; then
         if [[ $3 == "-v" ]]; then
@@ -60,3 +60,6 @@ do
 done
 
 exit 0
+else
+exit 0
+fi
