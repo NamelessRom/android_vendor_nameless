@@ -195,7 +195,7 @@ echo -e
 (
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
-$MD5 $img >$img.md5sum
+$MD5 $img > $img.md5sum
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
 echo -e
 echo -e $CL_CYN"===========-Package complete-==========="$CL_RST
@@ -205,5 +205,13 @@ echo -e $CL_CYN"size:"$CL_MAG" $ZIPSIZE"$CL_RST
 echo -e $CL_CYN"========================================"$CL_RST
 echo -e
 )
+
+if [ $BUILD_IS_JENKINS ] && [ "$BUILD_IS_JENKINS" -eq 1 ]; then
+	echo -e
+	echo -e $CL_CYN"Creating Changelog"$CL_RST
+	echo -e
+	$ANDROID_BUILD_TOP/vendor/nameless/tools/changelog_creator.sh $MODVERSION.zip $OUT/
+	echo -e
+fi
 
 exit 0
