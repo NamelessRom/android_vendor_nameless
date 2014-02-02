@@ -25,7 +25,11 @@ if [ -z $1 ] || [ -z $2 ]; then
     exit 1
 fi
 
-sdate=`date --date yesterday +"%m/%d/%Y"`
+if [ $BUILD_IS_JENKINS ] && [ "$BUILD_IS_JENKINS" -eq 1 ]; then
+    sdate=`date --date '2 days ago' +"%m/%d/%Y"`
+else
+    sdate=`date --date yesterday +"%m/%d/%Y"`
+fi
 cdate=`date +"%m_%d_%Y"`
 rdir=`pwd`
 if [[ $2 == "./" ]]; then
