@@ -33,6 +33,9 @@ else
 fi
 outputfile=$ddir/$1.changelog
 
+# Clean outputfile
+rm -f $outputfile
+
 # Find the directories to log
 find $rdir -path $rdir/.repo -prune -o -name .git -print | sed 's/\/.git//g' | sed 'N;$!P;$!D;$d' | while read line
 do
