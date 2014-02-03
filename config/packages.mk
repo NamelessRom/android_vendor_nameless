@@ -14,11 +14,15 @@ PRODUCT_PACKAGES += \
 # Additional apps
 PRODUCT_PACKAGES += \
     Apollo \
+    CustomLauncher3 \
     DashClock \
     DeviceControl \
-    DSPManager \
     Flashlight \
-    CustomLauncher3 \
+    NamelessSetupWizard
+
+# DSP Manager
+PRODUCT_PACKAGES += \
+    DSPManager \
     libcyanogen-dsp \
     audio_effects.conf
 
