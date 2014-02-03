@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     DeviceControl \
     DSPManager \
     Flashlight \
-    Launcher3 \
+    CustomLauncher3 \
     libcyanogen-dsp \
     audio_effects.conf
 
