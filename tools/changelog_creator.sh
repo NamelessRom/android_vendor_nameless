@@ -41,7 +41,7 @@ find $rdir -path $rdir/.repo -prune -o -name .git -print | sed 's/\/.git//g' | s
 do
     cd $line
     # Test to see if the repo needs to have a changelog written.
-    log=$(git log --pretty="%h - %an - %s" --no-merges --since="yesterday 02:00:00" --before="today 02:00:00" --date-order)
+    log=$(git log --pretty="%h - %an - %s" --no-merges --since="yesterday 02:00:00" --date-order)
     project=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
     if [ -z "$log" ]; then
         if [[ $3 == "-v" ]]; then
