@@ -9,6 +9,10 @@
 # Uncomment to debug
 #set -x
 
+if [ $SKIP_SQUISHER ] && [ "$SKIP_SQUISHER" -eq 1 ]; then
+    exit 0
+fi
+
 . $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
