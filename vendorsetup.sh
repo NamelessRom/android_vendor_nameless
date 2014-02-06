@@ -2,6 +2,7 @@
 add_lunch_combo nameless_d800-userdebug
 add_lunch_combo nameless_d801-userdebug
 add_lunch_combo nameless_d802-userdebug
+add_lunch_combo nameless_d803-userdebug
 # H
 add_lunch_combo nameless_hammerhead-userdebug
 # I
