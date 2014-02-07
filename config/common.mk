@@ -36,6 +36,9 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
+# Tethering
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
