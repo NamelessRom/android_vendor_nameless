@@ -5,10 +5,8 @@ PRODUCT_PACKAGES += \
     VoiceDialer \
     SoundRecorder \
     Basic \
-    QuickSearchBox \
     LiveWallpapersPicker \
     PhotoTable \
-    UpdateCenter \
     libemoji
 
 # Additional apps
@@ -18,16 +16,14 @@ PRODUCT_PACKAGES += \
     DashClock \
     DeviceControl \
     Flashlight \
-    NamelessSetupWizard
+    NamelessSetupWizard \
+    UpdateCenter
 
 # DSP Manager
 PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf
-
-PRODUCT_PACKAGES += \
-    CellBroadcastReceiver
 
 # Additional tools
 PRODUCT_PACKAGES += \
@@ -56,14 +52,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     procmem \
     procrank
-
-# Superuser
-PRODUCT_PACKAGES += \
-    Superuser \
-    su
-
-PRODUCT_COPY_FILES += \
-    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
