@@ -1,9 +1,5 @@
 PRODUCT_BRAND ?= nameless
 
-# Superuser
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 # bootanimation
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
@@ -76,8 +72,25 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# Only let devices with mobile network access pull this
+# WiFi-only devices don't need this
+ifeq ($(PRODUCT_NO_TELEPHONY),)
+# Selective SPN list for operator number who has the problem.
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Mms \
+    Stk \
+    CellBroadcastReceiver
+endif
+
 # Additional packages
 -include vendor/nameless/config/packages.mk
+
+# Proprietary
+-include vendor/nameless/proprietary/common.mk
 
 # T-Mobile theme engine
 include vendor/nameless/config/themes_common.mk
@@ -93,17 +106,3 @@ include vendor/nameless/config/themes_common.mk
 
 # Add our overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/nameless/overlay/common
-
-# Only let devices with mobile network access pull this
-# WiFi-only devices don't need this
-ifeq ($(PRODUCT_NO_TELEPHONY),)
-# Selective SPN list for operator number who has the problem.
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    Mms \
-    Stk \
-    CellBroadcastReceiver
-endif
