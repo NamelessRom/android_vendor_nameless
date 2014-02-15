@@ -9,6 +9,7 @@ add_lunch_combo nameless_hammerhead-userdebug
 add_lunch_combo nameless_i9100-userdebug
 add_lunch_combo nameless_i9300-userdebug
 # J
+add_lunch_combo nameless_jflte-userdebug
 add_lunch_combo nameless_jflteatt-userdebug
 add_lunch_combo nameless_jfltecan-userdebug
 add_lunch_combo nameless_jfltecri-userdebug
