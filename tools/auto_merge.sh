@@ -23,7 +23,7 @@
 
 # our array of repo names, which need to be merged
 # TODO: needs to be in sync with android manifest
-repos=( "development" "frameworks_av" "frameworks_native" "frameworks_opt_telephony" "hardware_broadcom_wlan" "packages_apps_Apollo" "packages_apps_Browser" "packages_apps_Camera2" "packages_apps_ContactsCommon" "packages_apps_DeskClock" "packages_apps_Dialer" "packages_apps_Gallery2" "packages_apps_InCallUI" "packages_apps_Mms" "packages_inputmethods_LatinIME" "packages_services_Telephony" "system_core" "system_media" )
+repos=( "development" "frameworks_av" "frameworks_native" "frameworks_opt_telephony" "hardware_broadcom_wlan" "packages_apps_Apollo" "packages_apps_Browser" "packages_apps_Camera2" "packages_apps_ContactsCommon" "packages_apps_DeskClock" "packages_apps_Dialer" "packages_apps_Gallery2" "packages_apps_InCallUI" "packages_apps_Mms" "packages_inputmethods_LatinIME" "packages_providers_ContactsProvider" "packages_services_Telephony" "system_core" "system_media" )
 
 # Save Username
 username=$1
