@@ -12,15 +12,6 @@ add_lunch_combo nameless_i9100-userdebug
 add_lunch_combo nameless_i9300-userdebug
 #J
 add_lunch_combo nameless_jflte-userdebug
-add_lunch_combo nameless_jflteatt-userdebug
-add_lunch_combo nameless_jfltecan-userdebug
-add_lunch_combo nameless_jfltecri-userdebug
-add_lunch_combo nameless_jfltecsp-userdebug
-add_lunch_combo nameless_jfltespr-userdebug
-add_lunch_combo nameless_jfltetmo-userdebug
-add_lunch_combo nameless_jflteusc-userdebug
-add_lunch_combo nameless_jfltevzw-userdebug
-add_lunch_combo nameless_jfltexx-userdebug
 #L
 add_lunch_combo nameless_ls980-userdebug
 #N
