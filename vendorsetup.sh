@@ -1,4 +1,5 @@
 #D
+add_lunch_combo nameless_d2lte-userdebug
 add_lunch_combo nameless_d800-userdebug
 add_lunch_combo nameless_d801-userdebug
 add_lunch_combo nameless_d802-userdebug
