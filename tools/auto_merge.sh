@@ -28,7 +28,7 @@ repos=( "development" "frameworks_av" "frameworks_native" "frameworks_opt_teleph
 # Save Username
 username=$1
 # Our root of the android source WITH trailing slash
-rootdir=~/android/
+rootdir=$ANDROID_BUILD_TOP/
 # Save current directory
 startdir=$(pwd)
 
