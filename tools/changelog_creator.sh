@@ -36,6 +36,10 @@ outputfile=$ddir/$1.changelog
 # Clean outputfile
 rm -f $outputfile
 
+#Header
+echo '<?xml version="1.0" encoding="utf-8"?>' >> $outputfile
+echo '<changelog bulletedList="true">' >> $outputfile
+
 # Find the directories to log
 find $rdir -path $rdir/.repo -prune -o -name .git -print | sed 's/\/.git//g' | sed 'N;$!P;$!D;$d' | while read line
 do
@@ -50,14 +54,17 @@ do
     else
         printf "\033[32m[+] Writing changes for $project\033[0m\n"
 
-        # Write the changelog
-        echo "Project: $project" >> $outputfile
-        echo "$log" | while read line
-        do
-             echo "  * $line" >> $outputfile
-        done
-        echo "" >> $outputfile
+		# Write the changelog
+		echo '<changelogversion versionName="'${project}'">' >> $outputfile
+		echo "$log" | while read line
+		do
+			echo "    <changelogtext>$line</changelogtext>" >> $outputfile
+		done
+		echo "</changelogversion>" >> $outputfile
     fi
 done
+
+#Footer
+echo '</changelog>' >> $outputfile
 
 exit 0
