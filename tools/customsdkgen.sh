@@ -18,6 +18,7 @@ FRAMEWORKRESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/framework-base_interm
 TELEPHONYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/telephony-common_intermediates/classes.jar
 OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes.jar
 ACRAJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/acra_intermediates/classes.jar
+CHANGELOGJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/changeloglib_intermediates/classes.jar
 
 if [ ! -f $STUBJAR ]; then
 make $STUBJAR
@@ -40,6 +41,9 @@ fi
 if [ ! -f $ACRAJAR ]; then
 make $ACRAJAR
 fi
+if [ ! -f $CHANGELOGJAR ]; then
+make $CHANGELOGJAR
+fi
 
 TMP_DIR=${OUTDIR}/tmp
 mkdir -p ${TMP_DIR}
@@ -50,6 +54,7 @@ $(cd ${TMP_DIR}; jar -xf ${FRAMEWORKRESJAR})
 $(cd ${TMP_DIR}; jar -xf ${TELEPHONYJAR})
 $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
 $(cd ${TMP_DIR}; jar -xf ${ACRAJAR})
+$(cd ${TMP_DIR}; jar -xf ${CHANGELOGJAR})
 
 jar -cf ${OUTDIR}/android.jar -C ${TMP_DIR}/ .
 
