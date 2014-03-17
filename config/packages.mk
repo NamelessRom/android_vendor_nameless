@@ -16,6 +16,7 @@ PRODUCT_PACKAGES += \
     DashClock \
     DeviceControl \
     Flashlight \
+    KernelTweaker \
     NamelessSetupWizard \
     UpdateCenter
 
