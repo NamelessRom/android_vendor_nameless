@@ -86,6 +86,10 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 endif
 
+# Stop Switch Delay
+PRODUCT_PROPERTY_OVERRIDES += \
+    app_switch_delay_time=false
+
 # Additional packages
 -include vendor/nameless/config/packages.mk
 
