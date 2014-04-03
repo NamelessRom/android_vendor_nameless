@@ -1,0 +1,37 @@
+#
+#
+#    Copyright (C) 2014 The NamelessROM Project
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+#
+
+# Check for target product
+ifeq (nameless_n1,$(TARGET_PRODUCT))
+
+# Device Overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/nameless/overlay/$(TARGET_PRODUCT)
+
+# Include Namless device configuration
+include vendor/nameless/config/common.mk
+
+# Inherit CM device configuration
+$(call inherit-product, device/oppo/n1/full_1.mk)
+
+# Grab needed APNs
+$(call inherit-product, vendor/nameless/config/apns.mk)
+
+PRODUCT_NAME := nameless_n1
+
+endif
