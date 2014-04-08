@@ -7,6 +7,27 @@ export C=/tmp/backupdir
 export S=/system
 export V=4.4
 
+props_persist="ro.sf.lcd_density"
+
+props_backup()
+{
+    rm -f "$C/prop"
+    for prop in $props_persist; do
+        grep "^$prop=" "$S/build.prop" >> "$C/prop"
+    done
+}
+
+props_restore()
+{
+    local sedargs
+    sedargs="-i"
+    for prop in $(cat $C/prop); do
+        k=$(echo $prop | cut -d'=' -f1)
+        sedargs="$sedargs s/^$k=.*/$prop/"
+    done
+    sed $sedargs "$S/build.prop"
+}
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
@@ -68,6 +89,7 @@ done
 case "$1" in
   backup)
     mkdir -p $C
+    props_backup
     xposed_backup
     check_prereq
     check_blacklist system
@@ -77,6 +99,7 @@ case "$1" in
     run_stage post-backup
   ;;
   restore)
+    props_restore
     xposed_restore
     check_prereq
     check_blacklist tmp
