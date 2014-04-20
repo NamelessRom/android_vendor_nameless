@@ -7,7 +7,13 @@ export C=/tmp/backupdir
 export S=/system
 export V=4.4
 
-props_persist="ro.sf.lcd_density"
+props_persist="
+ro.sf.lcd_density
+net.rmnet0.dns1
+net.rmnet0.dns2
+net.dns1
+net.dns2
+"
 
 props_backup()
 {
