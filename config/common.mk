@@ -1,8 +1,10 @@
 PRODUCT_BRAND ?= nameless
 
 # bootanimation
+ifeq ($(PRODUCT_NO_BOOTANIMATION),)
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+endif
 
 # get device client id base
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
