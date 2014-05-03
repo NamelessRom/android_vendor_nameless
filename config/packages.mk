@@ -13,7 +13,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Apollo \
     CustomLauncher3 \
-    DashClock \
     DeviceControl \
     Flashlight \
     NamelessSetupWizard \
