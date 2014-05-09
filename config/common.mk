@@ -43,6 +43,9 @@ PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
     vendor/nameless/prebuilt/bin/blacklist:system/addon.d/blacklist
 
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+
 # init.d support
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
