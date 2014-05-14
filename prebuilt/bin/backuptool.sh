@@ -8,11 +8,13 @@ export S=/system
 export V=4.4
 
 props_persist="
-ro.sf.lcd_density
-net.rmnet0.dns1
-net.rmnet0.dns2
 net.dns1
 net.dns2
+net.rmnet0.dns1
+net.rmnet0.dns2
+ro.nameless.debug
+ro.nameless.secret
+ro.sf.lcd_density
 "
 
 props_backup()
