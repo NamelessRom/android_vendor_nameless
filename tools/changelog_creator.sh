@@ -37,6 +37,12 @@ else
     outputfile=$ddir/$1.changelog
 fi
 
+if [[ $(date +%u) -eq 7 ]] ; then
+    targetdate="1 sunday 02:00:00 ago"
+else
+    targetdate="yesterday 02:00:00"
+fi
+
 # Clean outputfile
 rm -f $outputfile
 
@@ -49,7 +55,7 @@ find $rdir -path $rdir/.repo -prune -o -name .git -print | sed 's/\/.git//g' | s
 do
     cd $line
     # Test to see if the repo needs to have a changelog written.
-    log=$(git log --pretty="%s" --no-merges --since="yesterday 02:00:00" --date-order)
+    log=$(git log --pretty="%s" --no-merges --since=${targetdate} --date-order)
     project=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
     if [ -z "$log" ]; then
         if [[ $2 == "-v" ]] || [[ $3 == "-v" ]]; then
@@ -72,4 +78,3 @@ done
 echo '</changelog>' >> $outputfile
 
 exit 0
-
