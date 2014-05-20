@@ -9,11 +9,11 @@
 # Uncomment to debug
 #set -x
 
-if [ $SKIP_SQUISHER ] && [ "$SKIP_SQUISHER" -eq 1 ]; then
-    exit 0
-fi
-
 . $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
+
+OUTFILE=$1
+
+if [ -z $SKIP_SQUISHER ]; then #Skip Squisher
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]; then
@@ -173,13 +173,6 @@ rm -rf $REPACK/ota/recovery
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
-# Determine what to name the new signed package
-
-#MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
-VERSION=`sed -n -e'/ro.nameless.version/s/^.*=//p' $REPACK/ota/system/build.prop`
-export MODVERSION="nameless-"$VERSION
-export OUTFILE=$OUT/$MODVERSION.zip
-
 # Pack it up and sign
 echo -e $CL_CYN"Zipping package..."$CL_RST
 ( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
@@ -195,27 +188,18 @@ echo -e $CL_CYN"Cleaning up..."$CL_RST
 rm -rf $REPACK
 echo -e
 
+else
+	echo -e "Skipping Squisher"
+fi #Skip Squisher
+
 # Create a md5 checksum image of the repacked package
-(
-img=`basename $OUTFILE`
-cd `dirname $OUTFILE`
-$MD5 $img > $img.md5sum
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
 echo -e
-echo -e $CL_CYN"===========-Package complete-==========="$CL_RST
-echo -e $CL_CYN"zip:"$CL_MAG" $OUTFILE"$CL_RST
-echo -e $CL_CYN"md5:"$CL_MAG" $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST
-echo -e $CL_CYN"size:"$CL_MAG" $ZIPSIZE"$CL_RST
-echo -e $CL_CYN"========================================"$CL_RST
+echo -e ${CL_CYN}"===========-Package complete-==========="${CL_RST}
+echo -e ${CL_CYN}"zip:"${CL_MAG}" $OUTFILE"${CL_RST}
+echo -e ${CL_CYN}"md5:"${CL_MAG}" $(cat $OUTFILE.md5sum | awk '{ print $1 }')"${CL_RST}
+echo -e ${CL_CYN}"size:"${CL_MAG}" $ZIPSIZE"${CL_RST}
+echo -e ${CL_CYN}"========================================"${CL_RST}
 echo -e
-)
-
-if [ $BUILD_IS_JENKINS ] && [ "$BUILD_IS_JENKINS" -eq 1 ]; then
-	echo -e
-	echo -e $CL_CYN"Creating Changelog"$CL_RST
-	echo -e
-	$ANDROID_BUILD_TOP/vendor/nameless/tools/changelog_creator.sh $MODVERSION.zip $OUT/
-	echo -e
-fi
 
 exit 0
