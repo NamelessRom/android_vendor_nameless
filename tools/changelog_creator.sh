@@ -20,8 +20,8 @@
 ##                                                                       ##
 ###########################################################################
 
-if [ -z $1 ] || [ -z $2 ]; then
-    echo "Usage: ${BASH_SOURCE[0]} output.zip /path/to/output/folder/ [-v]"
+if [ -z $1 ]; then
+    echo "Usage: ${BASH_SOURCE[0]} output.zip [/path/to/output/folder/] [-v]"
     exit 1
 fi
 
@@ -31,7 +31,11 @@ if [[ $2 == "./" ]]; then
 else
     ddir=$2
 fi
-outputfile=$ddir/$1.changelog
+if [[ -z $2 ]] || [[ $2 == "-v" ]]; then
+    outputfile=$1.changelog
+else
+    outputfile=$ddir/$1.changelog
+fi
 
 # Clean outputfile
 rm -f $outputfile
@@ -48,7 +52,7 @@ do
     log=$(git log --pretty="%s" --no-merges --since="yesterday 02:00:00" --date-order)
     project=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
     if [ -z "$log" ]; then
-        if [[ $3 == "-v" ]]; then
+        if [[ $2 == "-v" ]] || [[ $3 == "-v" ]]; then
             printf "\033[31m[-] Nothing updated on $project, skipping\033[0m\n"
         fi
     else
