@@ -9,10 +9,6 @@
 # Uncomment to debug
 #set -x
 
-if [ $SKIP_SQUISHER ] && [ "$SKIP_SQUISHER" -eq 1 ]; then
-    exit 0
-fi
-
 . $ANDROID_BUILD_TOP/vendor/nameless/tools/functions
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
@@ -209,13 +205,5 @@ echo -e $CL_CYN"size:"$CL_MAG" $ZIPSIZE"$CL_RST
 echo -e $CL_CYN"========================================"$CL_RST
 echo -e
 )
-
-if [ $BUILD_IS_JENKINS ] && [ "$BUILD_IS_JENKINS" -eq 1 ]; then
-	echo -e
-	echo -e $CL_CYN"Creating Changelog"$CL_RST
-	echo -e
-	$ANDROID_BUILD_TOP/vendor/nameless/tools/changelog_creator.sh $MODVERSION.zip $OUT/
-	echo -e
-fi
 
 exit 0
