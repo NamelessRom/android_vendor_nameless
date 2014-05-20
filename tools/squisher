@@ -29,7 +29,7 @@ else
 fi
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
-	echo -e $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST
+	echo -e ${CL_RED}"ERROR: $0 only works with a full build environment. $OUT should exist."${CL_RST}
 	exit 1
 fi
 
@@ -73,25 +73,25 @@ if [ "$WANT_SQUASHFS" -eq 1 ]; then
 	if type mksquashfs >/dev/null 2>&1; then
 		if mksquashfs -version | grep -q "version $MKSQUASHFS_VER_REQ"; then :; else
 			echo -e
-			echo -e $CL_RED"ERROR: mksquashfs must be at least version $MKSQUASHFS_VER_REQ for this build."$CL_RST
+			echo -e ${CL_RED}"ERROR: mksquashfs must be at least version $MKSQUASHFS_VER_REQ for this build."${CL_RST}
 			fatal=1
 		fi
 	else
 		echo -e
-		echo -e $CL_RED"ERROR: $TARGET_PRODUCT requires mksquashfs."$CL_RST
+		echo -e ${CL_RED}"ERROR: $TARGET_PRODUCT requires mksquashfs."${CL_RST}
 		fatal=1
 	fi
 
 	if [ "$fatal" -ne 0 ]; then
 		echo -e
-		echo -e $CL_YLW"       Unoptimized package is still available at"
-		echo -e "         $OTAPACKAGE"$CL_RST
+		echo -e ${CL_YLW}"       Unoptimized package is still available at"
+		echo -e "         $OTAPACKAGE"${CL_RST}
 		exit $fatal
 	fi
 fi
 
 REPACK=$OUT/repack.d
-echo -e $CL_CYN"Sanitizing environment..."$CL_RST
+echo -e ${CL_CYN}"Sanitizing environment..."${CL_RST}
 rm -rf $REPACK
 mkdir -p $REPACK
 echo -e
@@ -100,7 +100,7 @@ echo -e
 mkdir $REPACK/ota
 (
 cd $REPACK/ota
-echo -e $CL_CYN"Unpacking $OTAPACKAGE..."$CL_RST
+echo -e ${CL_CYN}"Unpacking $OTAPACKAGE..."${CL_RST}
 unzip $QUIET $OTAPACKAGE
 echo -e
 
@@ -177,19 +177,21 @@ rm -rf $REPACK/ota/recovery
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Pack it up and sign
-echo -e $CL_CYN"Zipping package..."$CL_RST
+echo -e ${CL_CYN}"Zipping package..."${CL_RST}
 ( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
-echo -e
-echo -e $CL_CYN"Signing package..."$CL_RST
-SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
+echo -e ${CL_CYN}"Signing package..."${CL_RST}
+if [ -f "$ANDROID_BUILD_TOP/vendor/nameless/private/keys" ]; then
+	echo -e ${CL_GRN}"Nice, using private keys"${CL_RST}
+	SECURITYDIR=$ANDROID_BUILD_TOP/vendor/nameless/private/keys
+else
+	SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
+fi
 java -Xmx2048m \
 	-jar $OUT_DIR/host/$OUT_TARGET_HOST/framework/signapk.jar \
 	-w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
 	$REPACK/update.zip $OUTFILE
-echo -e
-echo -e $CL_CYN"Cleaning up..."$CL_RST
+echo -e ${CL_CYN}"Cleaning up..."${CL_RST}
 rm -rf $REPACK
-echo -e
 
 else
 	echo -e ${CL_CYN}"Skipping Squisher"${CL_RST}
