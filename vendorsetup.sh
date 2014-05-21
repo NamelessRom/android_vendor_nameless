@@ -10,6 +10,7 @@ add_lunch_combo nameless_d803-userdebug
 add_lunch_combo nameless_galaxysmtd-userdebug
 #H
 add_lunch_combo nameless_hammerhead-userdebug
+add_lunch_combo nameless_haida-userdebug
 #I
 add_lunch_combo nameless_i9100-userdebug
 add_lunch_combo nameless_i9300-userdebug
