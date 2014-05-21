@@ -8,6 +8,7 @@ add_lunch_combo nameless_d802-userdebug
 add_lunch_combo nameless_d803-userdebug
 #G
 add_lunch_combo nameless_galaxysmtd-userdebug
+add_lunch_combo nameless_grouper-userdebug
 #H
 add_lunch_combo nameless_haida-userdebug
 add_lunch_combo nameless_hammerhead-userdebug
@@ -24,5 +25,7 @@ add_lunch_combo nameless_n7000-userdebug
 #P
 add_lunch_combo nameless_p880-userdebug
 add_lunch_combo nameless_p970-userdebug
+#T
+add_lunch_combo nameless_tilapia-userdebug
 #V
 add_lunch_combo nameless_vs980-userdebug
