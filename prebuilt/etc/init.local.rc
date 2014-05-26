@@ -82,8 +82,11 @@ on boot
     chmod 0664 /sys/kernel/mm/ksm/sleep_millisecs
     chown root system /sys/kernel/mm/ksm/run
     chmod 0664 /sys/kernel/mm/ksm/run
-    write /sys/kernel/mm/ksm/sleep_millisecs 1500
-    write /sys/kernel/mm/ksm/pages_to_scan 256
+    chown root system /sys/kernel/mm/ksm/deferred_timer
+    chmod 0664 /sys/kernel/mm/ksm/deferred_timer
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/deferred_timer 1
 
     # See http://www.netmite.com/android/mydroid/2.0/dalvik/docs/embedded-vm-control.html
     # Disable verification, should speed things up
