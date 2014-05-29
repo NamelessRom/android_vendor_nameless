@@ -52,7 +52,8 @@ endif
 
 # init.d support
 PRODUCT_COPY_FILES += \
-	vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/nameless/prebuilt/etc/init.d/95frandom:system/etc/init.d/95frandom \
 	vendor/nameless/prebuilt/bin/sysinit:system/bin/sysinit
 
 # userinit support
