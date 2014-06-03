@@ -20,30 +20,51 @@
 <resources>
 
     <string-array name="translators_name" translatable="false">
-        <item>---Deutsch</item>
+        <item>AAT Industries</item>
+        <item>Alex dos Anjos</item>
         <item>Alexander Martinz</item>
-        <item>Kilian von Pflugk</item>
-        <item>---España</item>
-        <item>Cristian Medrano Planes</item>
-        <item>migan95</item>
-        <item>---Nederlands</item>
         <item>Amy Kaptijn</item>
-        <item>Kasper Hettinga</item>
-        <item>---русский</item>
         <item>Артем Лещев</item>
-    </string-array>
-    <string-array name="translators_crowdin" translatable="false">
-        <item>---</item>
-        <item>https://crowdin.net/profile/Evisceration</item>
-        <item>https://crowdin.net/profile/kilianvonpflugk</item>
-        <item>---</item>
-        <item>https://crowdin.net/profile/fusionero</item>
-        <item>https://crowdin.net/profile/migan95</item>
-        <item>---</item>
-        <item>https://crowdin.net/profile/Amyy</item>
-        <item>https://crowdin.net/profile/kasperhettinga</item>
-        <item>---</item>
-        <item>https://crowdin.net/profile/matshch</item>
+        <item>artaman</item>
+        <item>atenzd</item>
+        <item>bejda</item>
+        <item>blinoff82</item>
+        <item>Charles Saint-Yves (Chuck)</item>
+        <item>Cristian Medrano</item>
+        <item>desalesouche</item>
+        <item>Dmitriy Konyshev</item>
+        <item>Fabio Bezzi</item>
+        <item>Felipe de Barros</item>
+        <item>Felipe Nascimento</item>
+        <item>Fiof</item>
+        <item>jbnitro</item>
+        <item>johan111</item>
+        <item>JP Coquelle</item>
+        <item>julianmalonso</item>
+        <item>Kasper Hettinga</item>
+        <item>Kilian von Pflugk</item>
+        <item>Łukasz Andrzejczak</item>
+        <item>Marko Milojkovic</item>
+        <item>Marcos Villar</item>
+        <item>Marwen Kheder</item>
+        <item>Michael Dallago</item>
+        <item>migan95</item>
+        <item>Mustafa Aslan</item>
+        <item>Oliver Sydow</item>
+        <item>Olivier Viaene</item>
+        <item>pucsp</item>
+        <item>Razvan</item>
+        <item>rellagher</item>
+        <item>semialbino97</item>
+        <item>Stéphane NICOLAS</item>
+        <item>Top_Fuel</item>
+        <item>vezsoldas</item>
+        <item>vladpke</item>
+        <item>w4shb33r</item>
+        <item>3andala</item>
+        <item>Дмитрий Киселёв</item>
+        <item>一樹下原</item>
+        <item>李德华</item>
     </string-array>
 
 </resources>
