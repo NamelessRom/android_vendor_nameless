@@ -16,6 +16,7 @@ add_lunch_combo nameless_grouper-userdebug
 add_lunch_combo nameless_haida-userdebug
 add_lunch_combo nameless_hammerhead-userdebug
 #I
+add_lunch_combo nameless_i9082-userdebug
 add_lunch_combo nameless_i9100-userdebug
 add_lunch_combo nameless_i9300-userdebug
 add_lunch_combo nameless_i9500-userdebug
