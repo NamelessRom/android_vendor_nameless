@@ -1,6 +1,5 @@
 # Additional packages
 PRODUCT_PACKAGES += \
-    Development \
     LatinIME \
     VoiceDialer \
     SoundRecorder \
@@ -41,11 +40,7 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     ntfsfix \
     ntfs-3g \
-    gdbserver \
-    micro_bench \
-    oprofiled \
-    sqlite3 \
-    strace
+    sqlite3
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
@@ -53,11 +48,6 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
     libnamparser
-
-# Extras
-PRODUCT_PACKAGES += \
-    procmem \
-    procrank
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -67,6 +57,18 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
+
+# debugging / development apps
+ifeq ($(USE_ALL_DEVELOPMENT),true)
+PRODUCT_PACKAGES += \
+    Development \
+    procmem \
+    procrank \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    strace
+endif
 
 # Live Wallpapers
 ifeq ($(USE_ALL_LIVEWALLPAPERS),true)
