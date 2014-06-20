@@ -9,8 +9,8 @@ username=$1
 ###########################################################################
 root=$(pwd)
 base="/android"
-languages=("ca" "de" "es-ES" "fr" "it" "nl" "pl" "pt-BR" "ru" "tr")
-values=("ca" "de" "es" "fr" "it" "nl" "pl" "pt-rBR" "ru" "tr")
+languages=("af" "ar" "ca" "cs" "da" "de" "el" "es-ES" "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "no"     "pl" "pt-BR"  "ro" "ru" "sr" "sv-SE"  "tr" "uk" "vi" "zh-CN"  "zh-TW")
+values=(   "af" "ar" "ca" "cs" "da" "de" "el" "es"    "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "nb-rNO" "pl" "pt-rBR" "ro" "ru" "sr" "sv-rSE" "tr" "uk" "vi" "zh-rCN" "zh-rTW")
 ###########################################################################
 core=${base}/frameworks/base/core/res/res/values
 devicecontrol=${base}/packages/apps/DeviceControl/app/src/main/res/values
