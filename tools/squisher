@@ -13,7 +13,7 @@
 
 OUTFILE=$1
 
-if [ -z $SKIP_SQUISHER ]; then #Skip Squisher
+if [ -n $USE_SQUISHER ]; then # Skip Squisher
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]; then
@@ -193,7 +193,7 @@ rm -rf $REPACK
 
 else
 	echo -e ${CL_CYN}"Skipping Squisher"${CL_RST}
-fi #Skip Squisher
+fi # Skip Squisher
 
 # Create a md5 checksum image of the repacked package
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
