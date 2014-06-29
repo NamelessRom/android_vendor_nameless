@@ -44,12 +44,6 @@ PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
     vendor/nameless/prebuilt/bin/blacklist:system/addon.d/blacklist
 
-# Odexer
-ifeq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/etc/init.d/99odex:system/etc/init.d/99odex
-endif
-
 # init.d support
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
