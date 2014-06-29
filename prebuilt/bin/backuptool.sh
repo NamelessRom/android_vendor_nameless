@@ -116,10 +116,6 @@ case "$1" in
     run_stage post-restore
     restore_addon_d
     rm -rf $C
-    rm -rf /system/app/Superuser.odex
-    rm -rf /system/app/SuperUser.odex
-    rm -rf /system/app/SuperSu.odex
-    rm -rf /system/app/SuperSU.odex
     sync
   ;;
   *)
