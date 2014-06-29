@@ -1,20 +1,21 @@
 # Additional packages
 PRODUCT_PACKAGES += \
-    LatinIME \
-    VoiceDialer \
-    SoundRecorder \
     Basic \
+    LatinIME \
     LiveWallpapersPicker \
     PhotoTable \
-    libemoji
+    SoundRecorder \
+    VoiceDialer
 
 # Additional apps
 PRODUCT_PACKAGES += \
     Apollo \
     CustomLauncher3 \
+    DashClock \
     DeviceControl \
     Flashlight \
     NamelessSetupWizard \
+    Superuser \
     UpdateCenter
 
 # DSP Manager
@@ -40,7 +41,8 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     ntfsfix \
     ntfs-3g \
-    sqlite3
+    sqlite3 \
+    libemoji
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
