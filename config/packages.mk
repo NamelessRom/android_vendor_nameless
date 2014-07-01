@@ -4,8 +4,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     LiveWallpapersPicker \
     PhotoTable \
-    SoundRecorder \
-    VoiceDialer
+    SoundRecorder
 
 # Additional apps
 PRODUCT_PACKAGES += \
@@ -59,6 +58,12 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
+
+# unneeded bloat
+ifeq ($(USE_ALL_BLOAT),true)
+PRODUCT_PACKAGES += \
+    VoiceDialer
+endif
 
 # debugging / development apps
 ifeq ($(USE_ALL_DEVELOPMENT),true)
