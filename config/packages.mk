@@ -13,6 +13,7 @@ PRODUCT_PACKAGES += \
     DashClock \
     DeviceControl \
     Flashlight \
+    NamelessProvider \
     NamelessSetupWizard \
     SuperSU \
     UpdateCenter
