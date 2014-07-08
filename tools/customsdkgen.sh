@@ -23,6 +23,7 @@ OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classe
 ACRAJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/acra_intermediates/classes.jar
 CHANGELOGJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/changeloglib_intermediates/classes.jar
 CARDSJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android-opt-cards_intermediates/classes.jar
+NAMELESSHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.namelessrom.hardware_intermediates/classes.jar
 
 if [ ! -f $STUBJAR ]; then
 make $STUBJAR
@@ -58,6 +59,9 @@ fi
 if [ ! -f $CARDSJAR ]; then
 make $CARDSJAR
 fi
+if [ ! -f $NAMELESSHWJAR ]; then
+make $NAMELESSHWJAR
+fi
 
 TMP_DIR=${OUTDIR}/tmp
 mkdir -p ${TMP_DIR}
@@ -73,6 +77,7 @@ $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
 $(cd ${TMP_DIR}; jar -xf ${ACRAJAR})
 $(cd ${TMP_DIR}; jar -xf ${CHANGELOGJAR})
 $(cd ${TMP_DIR}; jar -xf ${CARDSJAR})
+$(cd ${TMP_DIR}; jar -xf ${NAMELESSHWJAR})
 
 jar -cf ${OUTDIR}/android.jar -C ${TMP_DIR}/ .
 
