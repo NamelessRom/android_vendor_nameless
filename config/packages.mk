@@ -56,6 +56,11 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
+# Nameless Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+    org.namelessrom.hardware \
+    org.namelessrom.hardware.xml
+
 ######
 # Additional Extras, enabled via flags
 ######
