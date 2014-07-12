@@ -13,10 +13,10 @@ PRODUCT_PACKAGES += \
     DashClock \
     DeviceControl \
     Flashlight \
+    NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
-    SuperSU \
-    UpdateCenter
+    SuperSU
 
 # DSP Manager
 ifneq ($(USE_DSP_MANAGER),false)
