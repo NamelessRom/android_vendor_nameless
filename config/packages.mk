@@ -19,10 +19,12 @@ PRODUCT_PACKAGES += \
     UpdateCenter
 
 # DSP Manager
+ifneq ($(USE_DSP_MANAGER),false)
 PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf
+endif
 
 # Additional tools
 PRODUCT_PACKAGES += \
