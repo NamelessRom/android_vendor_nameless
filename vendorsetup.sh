@@ -1,5 +1,7 @@
 #A
 add_lunch_combo nameless_anzu-userdebug
+#B
+add_lunch_combo nameless_bacon-userdebug
 #D
 add_lunch_combo nameless_d2lte-userdebug
 add_lunch_combo nameless_d800-userdebug
