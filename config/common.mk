@@ -1,8 +1,8 @@
 PRODUCT_BRAND ?= nameless
 
 # bootanimation
-ifeq ($(PRODUCT_NO_BOOTANIMATION),)
-PRODUCT_BOOTANIMATION := vendor/nameless/prebuilt/bootanimation/bootanimation.zip
+ifeq ($(PRODUCT_BOOTANIMATION),)
+include vendor/nameless/config/bootanimation.mk
 endif
 
 # get device client id base
