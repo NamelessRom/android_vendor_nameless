@@ -42,9 +42,9 @@ fi
 tmpfile=${outputfile}.tmp
 
 if [[ $(date +%u) -eq 7 ]] ; then
-    targetdate="1 sunday 02:00:00 ago"
+    targetdate=$(date --date='-7 days')
 else
-    targetdate="yesterday 02:00:00"
+    targetdate=$(date --date='-1 day')
 fi
 
 changes_since='changes since '${targetdate}
