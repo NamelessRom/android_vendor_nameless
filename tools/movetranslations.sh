@@ -17,6 +17,7 @@ devicecontrol=${base}/packages/apps/DeviceControl/resources/src/main/res/values
 settings=${base}/packages/apps/Settings/res/values
 systemui=${base}/frameworks/base/packages/SystemUI/res/values
 namelesscenter=${base}/packages/apps/NamelessCenter/app/src/main/res/values
+namelessprovider=${base}/packages/providers/NamelessProvider/app/src/main/res/values
 ###########################################################################
 . ${base}/build/envsetup.sh
 ###########################################################################
@@ -42,6 +43,10 @@ for i in ${!languages[*]}; do
     mkdir -p ${namelesscenter}-${values[$i]}/
     cp ${languages[$i]}/NamelessCenter/*.xml ${namelesscenter}-${values[$i]}/
     #######################################################################
+    echo "${languages[$i]}: [NamelessProvider]"
+    mkdir -p ${namelessprovider}-${values[$i]}/
+    cp ${languages[$i]}/NamelessProvider/*.xml ${namelessprovider}-${values[$i]}/
+    #######################################################################
 done
 ###########################################################################
 cd ${base}/frameworks/base/
@@ -61,6 +66,11 @@ git commit -m "automatic translation import"
 gerritupload ${username}
 ###########################################################################
 cd ${base}/packages/apps/NamelessCenter/
+git add app/src/main/res/
+git commit -m "automatic translation import"
+gerritupload ${username}
+###########################################################################
+cd ${base}/packages/providers/NamelessProvider/
 git add app/src/main/res/
 git commit -m "automatic translation import"
 gerritupload ${username}
