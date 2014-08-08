@@ -9,8 +9,8 @@ username=$1
 ###########################################################################
 root=$(pwd)
 base="/android"
-languages=("af" "ar" "ca" "cs" "da" "de" "el" "es-ES" "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "no"     "pl" "pt-BR"  "ro" "ru" "sr" "sv-SE"  "tr" "uk" "vi" "zh-CN"  "zh-TW")
-values=(   "af" "ar" "ca" "cs" "da" "de" "el" "es"    "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "nb-rNO" "pl" "pt-rBR" "ro" "ru" "sr" "sv-rSE" "tr" "uk" "vi" "zh-rCN" "zh-rTW")
+languages=("af" "ar" "ca" "cs" "da" "de" "el" "es-ES" "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "no"     "pl" "pt-BR"  "ro" "ru" "sr" "sv-SE"  "th" "tr" "uk" "vi" "zh-CN"  "zh-HK"  "zh-TW")
+values=(   "af" "ar" "ca" "cs" "da" "de" "el" "es"    "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "nb-rNO" "pl" "pt-rBR" "ro" "ru" "sr" "sv-rSE" "th" "tr" "uk" "vi" "zh-rCN" "zh-rHK" "zh-rTW")
 ###########################################################################
 core=${base}/frameworks/base/core/res/res/values
 devicecontrol=${base}/packages/apps/DeviceControl/resources/src/main/res/values
