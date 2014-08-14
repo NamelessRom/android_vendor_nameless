@@ -15,6 +15,7 @@ net.rmnet0.dns2
 ro.nameless.debug
 ro.nameless.secret
 ro.sf.lcd_density
+qemu.sf.lcd_density
 "
 
 props_backup()
