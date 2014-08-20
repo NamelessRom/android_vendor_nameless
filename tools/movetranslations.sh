@@ -1,11 +1,11 @@
 #!/bin/bash
 ###########################################################################
 if [ -z $1 ]; then
-    echo "usage: movetranslations.sh USERNAME"
+    echo "usage: movetranslations.sh BRANCH_NAME"
     exit
 fi
 ###########################################################################
-username=$1
+branch_name=$1
 ###########################################################################
 root=$(pwd)
 base="/android"
@@ -58,32 +58,32 @@ cd ${base}/frameworks/base/
 git add core/res/res/
 git add packages/SystemUI/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/DeviceControl/
 git add resources/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/Settings/
 git add res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/NamelessCenter/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/NamelessSetupWizard/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/providers/NamelessProvider/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd "${root}"
 echo "DONE"
