@@ -1,14 +1,14 @@
 #!/bin/bash
 ###########################################################################
 if [ -z $1 ]; then
-    echo "usage: movetranslations.sh USERNAME"
+    echo "usage: movetranslations.sh BRANCH_NAME"
     exit
 fi
 ###########################################################################
-username=$1
+branch_name=$1
 ###########################################################################
 root=$(pwd)
-base="/android"
+base="/home/dhiru1602/AndroidProject/Nameless"
 languages=("af" "ar" "ca" "cs" "da" "de" "el" "es-ES" "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "no"     "pl" "pt-BR"  "ro" "ru" "sr" "sv-SE"  "th" "tr" "uk" "vi" "zh-CN"  "zh-HK"  "zh-TW")
 values=(   "af" "ar" "ca" "cs" "da" "de" "el" "es"    "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "nb-rNO" "pl" "pt-rBR" "ro" "ru" "sr" "sv-rSE" "th" "tr" "uk" "vi" "zh-rCN" "zh-rHK" "zh-rTW")
 ###########################################################################
@@ -58,32 +58,32 @@ cd ${base}/frameworks/base/
 git add core/res/res/
 git add packages/SystemUI/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/DeviceControl/
 git add resources/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/Settings/
 git add res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/NamelessCenter/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/apps/NamelessSetupWizard/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd ${base}/packages/providers/NamelessProvider/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+gerritupload ${branch_name}
 ###########################################################################
 cd "${root}"
 echo "DONE"
