@@ -58,32 +58,38 @@ cd ${base}/frameworks/base/
 git add core/res/res/
 git add packages/SystemUI/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd ${base}/packages/apps/DeviceControl/
 git add resources/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd ${base}/packages/apps/Settings/
 git add res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd ${base}/packages/apps/NamelessCenter/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd ${base}/packages/apps/NamelessSetupWizard/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd ${base}/packages/providers/NamelessProvider/
 git add app/src/main/res/
 git commit -m "automatic translation import"
-gerritupload ${username}
+addgerrit ${username}
+gerritupload
 ###########################################################################
 cd "${root}"
 echo "DONE"
