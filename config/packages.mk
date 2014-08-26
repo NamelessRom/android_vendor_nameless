@@ -9,14 +9,14 @@ PRODUCT_PACKAGES += \
 # Additional apps
 PRODUCT_PACKAGES += \
     Apollo \
+    CustomLauncher3 \
     DashClock \
     DeviceControl \
     Flashlight \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
-    SuperSU \
-    Trebuchet \
+    SuperSU
 
 # DSP Manager
 ifneq ($(USE_DSP_MANAGER),false)
