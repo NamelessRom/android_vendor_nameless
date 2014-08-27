@@ -20,60 +20,102 @@
 <resources>
 
     <string-array name="translators_name" translatable="false">
+        <item>3andala</item>
         <item>AAT Industries</item>
+        <item>Adam Grzegorczyk</item>
+        <item>Alex Li</item>
         <item>Alex dos Anjos</item>
         <item>Alexander Martinz</item>
         <item>Amy Kaptijn</item>
-        <item>Артем Лещев</item>
+        <item>Andriy Marchuk</item>
+        <item>Andrés Reverón Molina</item>
+        <item>Charles Saint-Yves (Chuck)</item>
+        <item>Cristian Medrano</item>
+        <item>Dmitriy Konyshev</item>
+        <item>Dr-Nexus</item>
+        <item>Fabio Bezzi</item>
+        <item>Felipe Nascimento</item>
+        <item>Felipe de Barros</item>
+        <item>Francesco Asaro</item>
+        <item>JP Coquelle</item>
+        <item>Jan Hodermarsky</item>
+        <item>Jerry Cheung (Jerry101923)</item>
+        <item>Jose</item>
+        <item>Joseph Sosa</item>
+        <item>Kamil Malík</item>
+        <item>Kasper Hettinga</item>
+        <item>Kilian von Pflugk</item>
+        <item>Levent AÇIKYILDIZ</item>
+        <item>Luís da Ponte</item>
+        <item>Marcos Villar</item>
+        <item>Marko Milojkovic</item>
+        <item>Marwen Kheder</item>
+        <item>Mateusz Najdek</item>
+        <item>Michael Dallago</item>
+        <item>Milan Žídek</item>
+        <item>Morak</item>
+        <item>Muniwedesu</item>
+        <item>Mustafa Aslan</item>
+        <item>NETfellow</item>
+        <item>Nick Winner</item>
+        <item>Oliver Sydow</item>
+        <item>Olivier Viaene</item>
+        <item>Razvan</item>
+        <item>Reid Swan</item>
+        <item>RoelD</item>
+        <item>Rohan Joshi</item>
+        <item>Ruspoli Riccardo</item>
+        <item>Serge Gut</item>
+        <item>Sergio Borges</item>
+        <item>Silas Arentsen</item>
+        <item>Sledziks</item>
+        <item>Stéphane NICOLAS</item>
+        <item>Syl_20</item>
+        <item>Taylor.Yan1116</item>
+        <item>Top_Fuel</item>
+        <item>Vincent Mitard</item>
+        <item>Vladimir Kuzmanov</item>
+        <item>Yasin ÇUKUR</item>
+        <item>alexey.golobokov.1</item>
         <item>artaman</item>
+        <item>asch99</item>
         <item>atenzd</item>
         <item>bejda</item>
         <item>blinoff82</item>
-        <item>Charles Saint-Yves (Chuck)</item>
-        <item>Cristian Medrano</item>
+        <item>dancyy69</item>
         <item>desalesouche</item>
-        <item>dice66og</item>
-        <item>Dmitriy Konyshev</item>
-        <item>Fabio Bezzi</item>
-        <item>Felipe de Barros</item>
-        <item>Felipe Nascimento</item>
-        <item>Fiof</item>
-        <item>Francesco Asaro</item>
-        <item>Jan Hodermarsky</item>
+        <item>hypnz</item>
         <item>jbnitro</item>
         <item>johan111</item>
-        <item>JP Coquelle</item>
-        <item>julianmalonso</item>
-        <item>Kasper Hettinga</item>
-        <item>Kilian von Pflugk</item>
-        <item>Łukasz Andrzejczak</item>
-        <item>Marko Milojkovic</item>
-        <item>Marcos Villar</item>
-        <item>Marwen Kheder</item>
-        <item>Michael Dallago</item>
-        <item>Michael Konigshausen</item>
+        <item>kingghost73</item>
+        <item>krinyo75</item>
+        <item>ligrew</item>
+        <item>matsk</item>
+        <item>michael konigshausen</item>
         <item>migan95</item>
-        <item>Milan Žídek</item>
-        <item>Mustafa Aslan</item>
-        <item>ntanaka</item>
-        <item>Oliver Sydow</item>
-        <item>Olivier Viaene</item>
-        <item>Ömer F. Aksu</item>
+        <item>ola bogdan</item>
         <item>pucsp</item>
-        <item>Razvan</item>
         <item>rellagher</item>
+        <item>seby</item>
         <item>semialbino97</item>
-        <item>Sledziks</item>
-        <item>Stéphane NICOLAS</item>
-        <item>Top_Fuel</item>
+        <item>shoothas</item>
+        <item>telecumil</item>
+        <item>turkishield</item>
         <item>vezsoldas</item>
         <item>vladpke</item>
         <item>w4shb33r</item>
-        <item>3andala</item>
+        <item>wh</item>
+        <item>yllo.luis</item>
+        <item>Đông</item>
+        <item>İrfan Bektaş Yıldırım</item>
+        <item>Łukasz Andrzejczak</item>
+        <item>Артем Лещев</item>
         <item>Дмитрий Киселёв</item>
+        <item>Никита Буянов</item>
         <item>一樹下原</item>
-        <item>李德华</item>
         <item>朱智勇</item>
+        <item>李德华</item>
+        <item>田中太郎</item>
     </string-array>
 
 </resources>
