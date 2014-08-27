@@ -20,7 +20,9 @@ namelesscenter=${base}/packages/apps/NamelessCenter/app/src/main/res/values
 namelessprovider=${base}/packages/providers/NamelessProvider/app/src/main/res/values
 namelesssetupwizard=${base}/packages/apps/NamelessSetupWizard/app/src/main/res/values
 ###########################################################################
-. ${base}/build/envsetup.sh
+cd ${base}
+. build/envsetup.sh
+cd ${root}
 ###########################################################################
 for i in ${!languages[*]}; do
     #######################################################################
