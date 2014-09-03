@@ -9,7 +9,6 @@ PRODUCT_PACKAGES += \
 # Additional apps
 PRODUCT_PACKAGES += \
     Apollo \
-    CustomLauncher3 \
     DashClock \
     DeviceControl \
     Flashlight \
@@ -17,6 +16,11 @@ PRODUCT_PACKAGES += \
     NamelessProvider \
     NamelessSetupWizard \
     SuperSU
+
+# Launcher
+PRODUCT_PACKAGES += \
+    CMHome \
+    CustomLauncher3 \
 
 # DSP Manager
 ifneq ($(USE_DSP_MANAGER),false)
