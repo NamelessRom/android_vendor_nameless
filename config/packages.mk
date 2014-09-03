@@ -11,11 +11,10 @@ PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
     DeviceControl \
-    Flashlight \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
-    SuperSU
+    SuperSU \
 
 # Launcher
 PRODUCT_PACKAGES += \
@@ -77,6 +76,12 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
+
+# remove torch on unsupported devices
+ifeq ($(USE_NO_TORCH),)
+PRODUCT_PACKAGES += \
+    Torch
+endif
 
 # unneeded bloat
 ifeq ($(USE_ALL_BLOAT),true)
