@@ -11,11 +11,11 @@ PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
     DeviceControl \
-    Flashlight \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
-    SuperSU
+    SuperSU \
+    Torch \
 
 # Launcher
 PRODUCT_PACKAGES += \
