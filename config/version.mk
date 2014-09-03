@@ -46,3 +46,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nameless.version=$(ROM_VERSION) \
     ro.nameless.date=$(shell date +"%Y%m%d") \
     ro.nameless.releasetype=$(ROM_BUILDTYPE) \
+
+# disable multithreaded dextop for everything but nightlies and homemade
+ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dalvik.multithread=false
+endif
