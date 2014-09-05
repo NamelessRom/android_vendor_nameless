@@ -19,6 +19,8 @@ systemui=${base}/frameworks/base/packages/SystemUI/res/values
 namelesscenter=${base}/packages/apps/NamelessCenter/app/src/main/res/values
 namelessprovider=${base}/packages/providers/NamelessProvider/app/src/main/res/values
 namelesssetupwizard=${base}/packages/apps/NamelessSetupWizard/app/src/main/res/values
+customlauncher=${base}/packages/apps/CustomLauncher3/res/values
+telephony=${base}/packages/services/Telephony/res/values
 ###########################################################################
 cd ${base}
 . build/envsetup.sh
@@ -53,6 +55,14 @@ for i in ${!languages[*]}; do
     echo "${languages[$i]}: [NamelessSetupWizard]"
     mkdir -p ${namelesssetupwizard}-${values[$i]}/
     cp ${languages[$i]}/NamelessSetupWizard/*.xml ${namelesssetupwizard}-${values[$i]}/
+    #######################################################################
+    echo "${languages[$i]}: [CustomLauncher3]"
+    mkdir -p ${namelessprovider}-${values[$i]}/
+    cp ${languages[$i]}/CustomLauncher3/*.xml ${customlauncher}-${values[$i]}/
+    #######################################################################
+    echo "${languages[$i]}: [Telephony]"
+    mkdir -p ${telephony}-${values[$i]}/
+    cp ${languages[$i]}/services/Telephony/*.xml ${telephony}-${values[$i]}/
     #######################################################################
 done
 ###########################################################################
@@ -89,6 +99,18 @@ gerritupload
 ###########################################################################
 cd ${base}/packages/providers/NamelessProvider/
 git add app/src/main/res/
+git commit -m "automatic translation import"
+addgerrit ${username}
+gerritupload
+###########################################################################
+cd ${base}/packages/apps/CustomLauncher3/
+git add res/
+git commit -m "automatic translation import"
+addgerrit ${username}
+gerritupload
+###########################################################################
+cd ${base}/packages/services/Telephony/
+git add res/
 git commit -m "automatic translation import"
 addgerrit ${username}
 gerritupload
