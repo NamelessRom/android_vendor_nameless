@@ -74,6 +74,14 @@ PRODUCT_PACKAGES += \
     org.namelessrom.hardware \
     org.namelessrom.hardware.xml
 
+# Dalvik and ART
+ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
+PRODUCT_RUNTIMES := runtime_libdvm_default
+PRODUCT_RUNTIMES += runtime_libart
+else
+PRODUCT_RUNTIMES := runtime_libdvm
+endif
+
 ######
 # Additional Extras, enabled via flags
 ######
