@@ -1,5 +1,8 @@
 PRODUCT_BRAND ?= nameless
 
+# Versioning
+include vendor/nameless/config/version.mk
+
 # bootanimation
 ifeq ($(PRODUCT_NO_BOOTANIMATION),)
 PRODUCT_BOOTANIMATION := vendor/nameless/prebuilt/bootanimation/bootanimation.zip
@@ -94,9 +97,6 @@ endif
 
 # T-Mobile theme engine
 include vendor/nameless/config/themes_common.mk
-
-# Versioning
--include vendor/nameless/config/version.mk
 
 # Private Makefile
 -include vendor/nameless/private/common.mk
