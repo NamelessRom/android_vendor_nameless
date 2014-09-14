@@ -21,6 +21,7 @@ namelessprovider=${base}/packages/providers/NamelessProvider/app/src/main/res/va
 namelesssetupwizard=${base}/packages/apps/NamelessSetupWizard/app/src/main/res/values
 customlauncher=${base}/packages/apps/CustomLauncher3/res/values
 telephony=${base}/packages/services/Telephony/res/values
+screencast=${base}/packages/apps/Screencast/app/src/main/res/values
 ###########################################################################
 cd ${base}
 . build/envsetup.sh
@@ -63,6 +64,10 @@ for i in ${!languages[*]}; do
     echo "${languages[$i]}: [Telephony]"
     mkdir -p ${telephony}-${values[$i]}/
     cp ${languages[$i]}/services/Telephony/*.xml ${telephony}-${values[$i]}/
+    #######################################################################
+    echo "${languages[$i]}: [Screencast]"
+    mkdir -p ${screencast}-${values[$i]}/
+    cp ${languages[$i]}/Screencast/*.xml ${screencast}-${values[$i]}/
     #######################################################################
 done
 ###########################################################################
@@ -111,6 +116,12 @@ gerritupload
 ###########################################################################
 cd ${base}/packages/services/Telephony/
 git add res/
+git commit -m "automatic translation import"
+addgerrit ${username}
+gerritupload
+###########################################################################
+cd ${base}/packages/apps/Screencast/
+git add app/src/main/res/
 git commit -m "automatic translation import"
 addgerrit ${username}
 gerritupload
