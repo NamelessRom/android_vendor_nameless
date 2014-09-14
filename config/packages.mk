@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
+    Screencast \
     SuperSU \
 
 # Launcher
