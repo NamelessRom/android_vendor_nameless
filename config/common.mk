@@ -31,6 +31,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.debug.alloc=0
 
+# disable multithreaded dextop for everything but nightlies and homemade
+ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dalvik.multithread=false
+endif
+
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
@@ -46,6 +52,7 @@ PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
     vendor/nameless/prebuilt/bin/blacklist:system/addon.d/blacklist
 
+# OTA signature check
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/otasigcheck.sh:system/bin/otasigcheck.sh
 
@@ -90,10 +97,10 @@ PRODUCT_PACKAGES += \
 endif
 
 # Additional packages
--include vendor/nameless/config/packages.mk
+include vendor/nameless/config/packages.mk
 
 # Proprietary
--include vendor/nameless/proprietary/common.mk
+include vendor/nameless/proprietary/common.mk
 
 # T-Mobile theme engine
 include vendor/nameless/config/themes_common.mk

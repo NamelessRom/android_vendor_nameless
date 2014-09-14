@@ -1,14 +1,10 @@
-# Versioning of the ROM
-
-ifeq ($(BUILD_IS_JENKINS),1)
+# Versioning of NamelessRom
 
 ifneq ($(BUILD_BUILDTYPE),)
     ROM_BUILDTYPE = $(BUILD_BUILDTYPE)
 else
     ROM_BUILDTYPE := NIGHTLY
 endif
-
-endif # we are jenkins
 
 ifdef BUILDTYPE_RELEASE
     ROM_BUILDTYPE := RELEASE
@@ -46,9 +42,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nameless.version=$(ROM_VERSION) \
     ro.nameless.date=$(shell date +"%Y%m%d") \
     ro.nameless.releasetype=$(ROM_BUILDTYPE) \
-
-# disable multithreaded dextop for everything but nightlies and homemade
-ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dalvik.multithread=false
-endif
