@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 endif
 
+# we are nameless rom
+PRODUCT_COPY_FILES += \
+    vendor/nameless/config/permissions/org.namelessrom.android.xml:system/etc/permissions/org.namelessrom.android.xml
+
 # Additional packages
 include vendor/nameless/config/packages.mk
 
