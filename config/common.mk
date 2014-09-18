@@ -3,6 +3,10 @@ PRODUCT_BRAND ?= nameless
 # Versioning
 include vendor/nameless/config/version.mk
 
+# we are nameless rom
+PRODUCT_COPY_FILES += \
+    vendor/nameless/config/permissions/org.namelessrom.android.xml:system/etc/permissions/org.namelessrom.android.xml
+
 # bootanimation
 ifeq ($(PRODUCT_NO_BOOTANIMATION),)
 PRODUCT_BOOTANIMATION := vendor/nameless/prebuilt/bootanimation/bootanimation.zip
@@ -85,20 +89,17 @@ PRODUCT_COPY_FILES += \
 # Only let devices with mobile network access pull this
 # WiFi-only devices don't need this
 ifeq ($(PRODUCT_NO_TELEPHONY),)
-# Selective SPN list for operator number who has the problem.
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
 # Telephony packages
 PRODUCT_PACKAGES += \
     Mms \
     Stk \
     CellBroadcastReceiver
-endif
 
-# we are nameless rom
-PRODUCT_COPY_FILES += \
-    vendor/nameless/config/permissions/org.namelessrom.android.xml:system/etc/permissions/org.namelessrom.android.xml
+# Add apn's
+include vendor/nameless/config/apns.mk
+
+endif
 
 # Additional packages
 include vendor/nameless/config/packages.mk
