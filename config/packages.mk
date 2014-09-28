@@ -74,12 +74,8 @@ PRODUCT_PACKAGES += \
     org.namelessrom.hardware \
     org.namelessrom.hardware.xml
 
-# Dalvik and ART
-ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
+# death to ART
 OVERRIDE_RUNTIMES := runtime_libdvm_default
-else
-OVERRIDE_RUNTIMES := runtime_libdvm runtime_libart
-endif
 
 ######
 # Additional Extras, enabled via flags
