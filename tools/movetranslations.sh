@@ -13,7 +13,7 @@ languages=("af" "ar" "ca" "cs" "da" "de" "el" "es-ES" "fa" "fi" "fr" "hi" "hu" "
 values=(   "af" "ar" "ca" "cs" "da" "de" "el" "es"    "fa" "fi" "fr" "hi" "hu" "it" "ja" "ko" "nl" "nb-rNO" "pl" "pt-rBR" "ro" "ru" "sr" "sv-rSE" "th" "tr" "uk" "vi" "zh-rCN" "zh-rHK" "zh-rTW")
 ###########################################################################
 core=${base}/frameworks/base/core/res/res/values
-devicecontrol=${base}/packages/apps/DeviceControl/resources/src/main/res/values
+devicecontrol=${base}/packages/apps/DeviceControl/app/src/main/res/values
 settings=${base}/packages/apps/Settings/res/values
 systemui=${base}/frameworks/base/packages/SystemUI/res/values
 namelesscenter=${base}/packages/apps/NamelessCenter/app/src/main/res/values
@@ -79,7 +79,7 @@ addgerrit ${username}
 gerritupload
 ###########################################################################
 cd ${base}/packages/apps/DeviceControl/
-git add resources/src/main/res/
+git add app/src/main/res/
 git commit -m "automatic translation import"
 addgerrit ${username}
 gerritupload
