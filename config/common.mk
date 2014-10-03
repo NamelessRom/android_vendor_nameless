@@ -7,6 +7,10 @@ include vendor/nameless/config/version.mk
 PRODUCT_COPY_FILES += \
     vendor/nameless/config/permissions/org.namelessrom.android.xml:system/etc/permissions/org.namelessrom.android.xml
 
+# and we do support cm features
+PRODUCT_COPY_FILES += \
+    vendor/nameless/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+
 # bootanimation
 ifeq ($(PRODUCT_NO_BOOTANIMATION),)
 PRODUCT_BOOTANIMATION := vendor/nameless/prebuilt/bootanimation/bootanimation.zip
