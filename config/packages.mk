@@ -57,6 +57,16 @@ PRODUCT_PACKAGES += \
     fibmap.f2fs \
     f2fstat
 
+# F2FS installation scripts
+PRODUCT_PACKAGES += \
+    vendor/nameless/prebuilt/bin/f2fs/format.sh:install/f2fs/format.sh \
+    vendor/nameless/prebuilt/bin/f2fs/trigger.sh:install/f2fs/trigger.sh \
+
+# Additional tools
+PRODUCT_PACKAGES += \
+    utility_mkbootimg \
+    utility_unpackbootimg \
+
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
