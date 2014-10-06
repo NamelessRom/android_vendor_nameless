@@ -90,6 +90,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
+# F2FS installation scripts
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/bin/f2fs/format.sh:install/f2fs/format.sh \
+    vendor/nameless/prebuilt/bin/f2fs/trigger.sh:install/f2fs/trigger.sh \
+
+# Additional tools
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/bin/f2fs/mkbootimg:install/f2fs/tools/mkbootimg \
+    vendor/nameless/prebuilt/bin/f2fs/unpackbootimg:install/f2fs/tools/unpackbootimg \
+
 # Only let devices with mobile network access pull this
 # WiFi-only devices don't need this
 ifeq ($(PRODUCT_NO_TELEPHONY),)
