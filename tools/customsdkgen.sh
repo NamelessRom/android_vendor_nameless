@@ -20,7 +20,7 @@ COMMONJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android-common_intermediate
 SERVICESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/com.android.services.telephony.common_intermediates/classes.jar
 
 OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes.jar
-ACRAJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/acra_intermediates/classes.jar
+CMHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.hardware_intermediates/classes.jar
 NAMELESSHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.namelessrom.hardware_intermediates/classes.jar
 
 if [ ! -f $STUBJAR ]; then
@@ -48,8 +48,8 @@ fi
 if [ ! -f $OKHTTPJAR ]; then
 make $OKHTTPJAR
 fi
-if [ ! -f $ACRAJAR ]; then
-make $ACRAJAR
+if [ ! -f $CMHWJAR ]; then
+make $CMHWJAR
 fi
 if [ ! -f $NAMELESSHWJAR ]; then
 make $NAMELESSHWJAR
@@ -66,7 +66,7 @@ $(cd ${TMP_DIR}; jar -xf ${COMMONJAR})
 $(cd ${TMP_DIR}; jar -xf ${SERVICESJAR})
 
 $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
-$(cd ${TMP_DIR}; jar -xf ${ACRAJAR})
+$(cd ${TMP_DIR}; jar -xf ${CMHWJAR})
 $(cd ${TMP_DIR}; jar -xf ${NAMELESSHWJAR})
 
 jar -cf ${OUTDIR}/android.jar -C ${TMP_DIR}/ .
