@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/otasigcheck.sh:system/bin/otasigcheck.sh
 
+# SuperSu Flasher
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/bin/supersuflasher.sh:system/bin/supersuflasher.sh
+
 # init.d support
 PRODUCT_COPY_FILES += \
 	vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
