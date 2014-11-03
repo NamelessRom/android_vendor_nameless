@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
     Apollo \
     DashClock \
     DeviceControl \
+    FileManager \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
