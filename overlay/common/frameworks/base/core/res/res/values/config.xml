@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The Google provider -->
+        <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
-        <!-- Legacy Google provider - consider removing -->
-        <item>com.google.android.location</item>
-        <!-- GMS (gapps) provider for 4.4 and above-->
-        <item>com.google.android.gms</item>
     </string-array>
+
+    <bool name="config_cellBroadcastAppLinks">true</bool>
 
     <!-- Package name for default keyguard appwidget [DO NOT TRANSLATE] -->
     <string name="widget_default_package_name" translatable="false">net.nurik.roman.dashclock</string>
@@ -15,7 +15,7 @@
     <!-- Class name for default keyguard appwidget [DO NOT TRANSLATE] -->
     <string name="widget_default_class_name" translatable="false">com.google.android.apps.dashclock.WidgetProvider</string>
 
-    <!-- Disable stock OTA components if installed -->
+    <!-- Disable stock OTA components if installed
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
@@ -25,12 +25,7 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$Receiver</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
     </string-array>
-
-    <bool name="config_cellBroadcastAppLinks">true</bool>
-
-    <!-- Set default for disabling menu key. Option to
-         disable does not work unless this is true. -->
-    <bool name="config_disableMenuKeyInLockScreen">true</bool>
+    -->
 
 </resources>
 
