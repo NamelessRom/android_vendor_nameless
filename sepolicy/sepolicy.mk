@@ -12,6 +12,7 @@ BOARD_SEPOLICY_UNION += \
     fs_use \
     genfs_contexts \
     seapp_contexts \
+    auditd.te \
     installd.te \
     ueventd.te \
     vold.te \
