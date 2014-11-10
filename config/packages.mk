@@ -74,9 +74,6 @@ PRODUCT_PACKAGES += \
     org.namelessrom.hardware \
     org.namelessrom.hardware.xml
 
-# death to ART
-OVERRIDE_RUNTIMES := runtime_libdvm_default
-
 ######
 # Additional Extras, enabled via flags
 ######
