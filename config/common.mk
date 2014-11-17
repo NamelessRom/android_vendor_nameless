@@ -42,12 +42,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
-# disable multithreaded dextop for everything but nightlies and homemade
-ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dalvik.multithread=false
-endif
-
 # enable ADB authentication if not on eng build
 #ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0

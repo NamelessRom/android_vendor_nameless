@@ -84,12 +84,6 @@ PRODUCT_PACKAGES += \
     Torch
 endif
 
-# unneeded bloat
-ifeq ($(USE_ALL_BLOAT),true)
-PRODUCT_PACKAGES += \
-    VoiceDialer
-endif
-
 # debugging / development apps
 ifeq ($(USE_ALL_DEVELOPMENT),true)
 PRODUCT_PACKAGES += \
