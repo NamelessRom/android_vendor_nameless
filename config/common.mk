@@ -27,17 +27,20 @@ endif
 
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
-	keyguard.no_require_sim=true \
-	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
-	ro.com.android.wifi-watchlist=GoogleGuest \
-	ro.setupwizard.enterprise_mode=1 \
-	ro.com.android.dateformat=MM-dd-yyyy \
-	ro.com.android.dataroaming=false \
-	persist.sys.root_access=1
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=false \
+    persist.sys.root_access=1
 
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.debug.alloc=0
+    dalvik.vm.debug.alloc=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
 
 # disable multithreaded dextop for everything but nightlies and homemade
 ifeq ($(filter NIGHTLY HOMEMADE,$(ROM_BUILDTYPE)),)
@@ -70,8 +73,8 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-	vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
-	vendor/nameless/prebuilt/bin/sysinit:system/bin/sysinit
+    vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/nameless/prebuilt/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
@@ -92,7 +95,7 @@ PRODUCT_COPY_FILES += \
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Only let devices with mobile network access pull this
 # WiFi-only devices don't need this
