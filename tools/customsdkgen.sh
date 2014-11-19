@@ -18,6 +18,7 @@ COMMONJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android-common_intermediate
 SERVICESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/com.android.services.telephony.common_intermediates/classes.jar
 
 OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes.jar
+VOLLEYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/volley_intermediates/classes.jar
 CMHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.hardware_intermediates/classes.jar
 NAMELESSHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.namelessrom.hardware_intermediates/classes.jar
 
@@ -40,6 +41,9 @@ fi
 if [ ! -f $OKHTTPJAR ]; then
 make $OKHTTPJAR
 fi
+if [ ! -f $VOLLEYJAR ]; then
+make $OKHTTPJAR
+fi
 if [ ! -f $CMHWJAR ]; then
 make $CMHWJAR
 fi
@@ -56,6 +60,7 @@ $(cd ${TMP_DIR}; jar -xf ${COMMONJAR})
 $(cd ${TMP_DIR}; jar -xf ${SERVICESJAR})
 
 $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
+$(cd ${TMP_DIR}; jar -xf ${VOLLEYJAR})
 $(cd ${TMP_DIR}; jar -xf ${CMHWJAR})
 $(cd ${TMP_DIR}; jar -xf ${NAMELESSHWJAR})
 
