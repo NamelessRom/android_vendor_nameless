@@ -14,7 +14,6 @@ PRODUCT_PACKAGES += \
     NamelessProvider \
     NamelessSetupWizard \
     Screencast \
-    Superuser \
 
 # Launcher
 PRODUCT_PACKAGES += \
@@ -48,6 +47,11 @@ PRODUCT_PACKAGES += \
     ntfs-3g \
     sqlite3 \
     libemoji
+
+# Superuser
+PRODUCT_PACKAGES += \
+    Superuser \
+    su \
 
 # F2FS filesystem
 PRODUCT_PACKAGES += \
