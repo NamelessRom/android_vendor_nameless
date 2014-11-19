@@ -9,13 +9,12 @@ PRODUCT_PACKAGES += \
 # Additional apps
 PRODUCT_PACKAGES += \
     Apollo \
-    DashClock \
     DeviceControl \
     NamelessCenter \
     NamelessProvider \
     NamelessSetupWizard \
     Screencast \
-    SuperSU \
+    Superuser \
 
 # Launcher
 PRODUCT_PACKAGES += \

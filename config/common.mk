@@ -1,5 +1,8 @@
 PRODUCT_BRAND ?= nameless
 
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
+
 # Versioning
 include vendor/nameless/config/version.mk
 
@@ -60,10 +63,6 @@ PRODUCT_COPY_FILES += \
 # OTA signature check
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/bin/otasigcheck.sh:system/bin/otasigcheck.sh
-
-# SuperSu Flasher
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/bin/supersuflasher.sh:system/bin/supersuflasher.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
