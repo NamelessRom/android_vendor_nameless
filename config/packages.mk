@@ -10,9 +10,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Apollo \
     DeviceControl \
-    NamelessCenter \
-    NamelessProvider \
-    NamelessSetupWizard \
+    NamelessOTA \
     Screencast \
 
 # Launcher
