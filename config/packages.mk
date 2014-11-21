@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs \
     bash \
-    vim \
     nano \
     htop \
     powertop \
@@ -50,6 +49,12 @@ PRODUCT_PACKAGES += \
     ntfs-3g \
     sqlite3 \
     libemoji
+
+# Extra tools
+PRODUCT_PACKAGES += \
+    vim \
+    zip \
+    unrar \
 
 # Superuser
 PRODUCT_PACKAGES += \
