@@ -129,12 +129,6 @@ on post-fs-data
     # Run sysinit
     start sysinit
 
-# sysinit (/system/etc/init.d)
-service sysinit /system/bin/sysinit
-    user root
-    oneshot
-    disabled
-
 # adb over network
 on property:service.adb.tcp.port=5555
     stop adbd
@@ -142,3 +136,10 @@ on property:service.adb.tcp.port=5555
 on property:service.adb.tcp.port=-1
     stop adbd
     start adbd
+
+# sysinit (/system/etc/init.d)
+service sysinit /system/bin/sysinit
+    user root
+    oneshot
+    disabled
+    seclabel u:r:sysinit:s0
