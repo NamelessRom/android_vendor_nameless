@@ -26,6 +26,11 @@ PRODUCT_PACKAGES += \
     audio_effects.conf
 endif
 
+# Some live wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    PhaseBeam \
+
 # Additional tools
 PRODUCT_PACKAGES += \
     openvpn \
@@ -102,9 +107,7 @@ ifeq ($(USE_ALL_LIVEWALLPAPERS),true)
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
-    LiveWallpapers \
     MagicSmokeWallpapers \
     NoiseField \
-    PhaseBeam \
     VisualizationWallpapers
 endif
