@@ -2,7 +2,7 @@
 PRODUCT_PACKAGES += \
     Basic \
     LatinIME \
-    LiveWallpapersPicker \
+    LockClock \
     PhotoTable \
     SoundRecorder
 
@@ -28,6 +28,7 @@ endif
 
 # Some live wallpapers
 PRODUCT_PACKAGES += \
+    LiveWallpapersPicker \
     LiveWallpapers \
     PhaseBeam \
 
