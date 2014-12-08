@@ -9,3 +9,10 @@ allow sysinit shell_exec:file { rx_file_perms };
 allow sysinit system_file:file { rx_file_perms };
 allow sysinit self:process setcurrent;
 
+allow sysinit app_data_file:dir { read search setattr };
+allow sysinit app_data_file:file { read getattr open };
+allow sysinit default_prop:property_service set;
+allow sysinit labeledfs:filesystem remount;
+allow sysinit rootfs:filesystem remount;
+allow sysinit self:capability dac_override;
+allow sysinit system_data_file:dir setattr;
