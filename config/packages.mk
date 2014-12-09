@@ -8,8 +8,9 @@ PRODUCT_PACKAGES += \
 
 # Additional apps
 PRODUCT_PACKAGES += \
-    Apollo \
+    AudioFX \
     DeviceControl \
+    Eleven \
     NamelessOTA \
     Screencast \
 
@@ -18,13 +19,6 @@ PRODUCT_PACKAGES += \
     CMHome \
     CustomLauncher3 \
 
-# DSP Manager
-ifneq ($(USE_DSP_MANAGER),false)
-PRODUCT_PACKAGES += \
-    DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf
-endif
 
 # Some live wallpapers
 PRODUCT_PACKAGES += \
