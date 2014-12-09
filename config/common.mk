@@ -66,12 +66,12 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/nameless/prebuilt/bin/sysinit:system/bin/sysinit
 
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
+# init.d and userinit support
+PRODUCT_PACKAGES += \
+    00banner \
+    90userinit \
 
 # Init script file with nameless extras
 PRODUCT_COPY_FILES += \
