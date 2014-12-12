@@ -61,14 +61,14 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/nameless/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/nameless/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/nameless/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/nameless/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
     vendor/nameless/prebuilt/bin/blacklist:system/addon.d/blacklist
 
 # OTA signature check
 PRODUCT_COPY_FILES += \
-    vendor/nameless/prebuilt/bin/otasigcheck.sh:system/bin/otasigcheck.sh
+    vendor/nameless/prebuilt/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \

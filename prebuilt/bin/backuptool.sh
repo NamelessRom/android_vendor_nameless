@@ -37,6 +37,9 @@ props_restore()
     sed $sedargs "$S/build.prop"
 }
 
+# Scripts in /system/addon.d expect to find backuptool.functions in /tmp
+cp -f /tmp/install/bin/backuptool.functions /tmp
+
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
