@@ -114,9 +114,6 @@ endif
 # Additional packages
 include vendor/nameless/config/packages.mk
 
-# Proprietary
-include vendor/nameless/proprietary/common.mk
-
 # T-Mobile theme engine
 include vendor/nameless/config/themes_common.mk
 
