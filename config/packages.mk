@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LiveWallpapers \
     PhaseBeam \
+    PhotoPhase \
 
 # Additional tools
 PRODUCT_PACKAGES += \
