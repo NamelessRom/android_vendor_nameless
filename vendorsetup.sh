@@ -11,9 +11,7 @@ add_lunch_combo nameless_bacon-userdebug
 #add_lunch_combo nameless_dlx-userdebug
 ## F
 add_lunch_combo nameless_find7a-userdebug
-add_lunch_combo nameless_find7au-userdebug
 add_lunch_combo nameless_find7s-userdebug
-add_lunch_combo nameless_find7su-userdebug
 ## G
 #add_lunch_combo nameless_galaxysl-userdebug
 #add_lunch_combo nameless_galaxysmtd-userdebug
