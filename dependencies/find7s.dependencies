@@ -1,0 +1,14 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_oppo_find7s",
+        "target_path": "device/oppo/find7s",
+        "revision":    "n-2.0"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CrazyWeasel/proprietary_vendor_oppo",
+        "target_path": "vendor/oppo",
+        "revision":    "n-2.0"
+    }
+]
