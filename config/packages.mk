@@ -54,7 +54,6 @@ PRODUCT_PACKAGES += \
 
 # Superuser
 PRODUCT_PACKAGES += \
-    Superuser \
     su \
 
 # F2FS filesystem
@@ -84,12 +83,6 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
-
-# remove torch on unsupported devices
-ifeq ($(USE_NO_TORCH),)
-PRODUCT_PACKAGES += \
-    Torch
-endif
 
 # debugging / development apps
 ifeq ($(USE_ALL_DEVELOPMENT),true)
