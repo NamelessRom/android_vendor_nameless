@@ -19,7 +19,6 @@ PRODUCT_PACKAGES += \
     CMHome \
     CustomLauncher3 \
 
-
 # Some live wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
@@ -55,6 +54,10 @@ PRODUCT_PACKAGES += \
 # Superuser
 PRODUCT_PACKAGES += \
     su \
+
+# Terminal
+PRODUCT_PACKAGES += \
+    Terminal \
 
 # F2FS filesystem
 PRODUCT_PACKAGES += \
