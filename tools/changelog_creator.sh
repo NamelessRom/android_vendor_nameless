@@ -20,6 +20,9 @@
 ##                                                                       ##
 ###########################################################################
 
+echo "Hello, i am a no-op for now!"
+exit 0
+
 if [ -z $1 ]; then
     echo "Usage: ${BASH_SOURCE[0]} output.zip [/path/to/output/folder/] [-v]"
     exit 1
