@@ -31,6 +31,7 @@ add_lunch_combo nameless_i9300-userdebug
 #add_lunch_combo nameless_mako-userdebug
 #add_lunch_combo nameless_moto_msm8960
 ## N
+add_lunch_combo nameless_n3-userdebug
 #add_lunch_combo nameless_n7000-userdebug
 add_lunch_combo nameless_n7100-userdebug
 #add_lunch_combo nameless_nicki-userdebug
