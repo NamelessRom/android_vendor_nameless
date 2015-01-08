@@ -10,6 +10,7 @@ add_lunch_combo nameless_bacon-userdebug
 #add_lunch_combo nameless_d803-userdebug
 #add_lunch_combo nameless_dlx-userdebug
 ## F
+add_lunch_combo nameless_find5-userdebug
 add_lunch_combo nameless_find7-userdebug
 ## G
 #add_lunch_combo nameless_galaxysl-userdebug
