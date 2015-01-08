@@ -96,20 +96,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
-# Only let devices with mobile network access pull this
-# WiFi-only devices don't need this
-ifeq ($(PRODUCT_NO_TELEPHONY),)
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    Mms \
-    Stk \
-    CellBroadcastReceiver
-
 # Add apn's
 include vendor/nameless/config/apns.mk
-
-endif
 
 # Additional packages
 include vendor/nameless/config/packages.mk

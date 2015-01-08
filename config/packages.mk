@@ -51,6 +51,12 @@ PRODUCT_PACKAGES += \
     zip \
     unrar \
 
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Mms \
+    Stk \
+    CellBroadcastReceiver \
+
 # Superuser
 PRODUCT_PACKAGES += \
     su \
