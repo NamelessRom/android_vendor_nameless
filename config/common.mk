@@ -108,5 +108,8 @@ include vendor/nameless/config/themes_common.mk
 # Private Makefile
 -include vendor/nameless/private/common.mk
 
+# Extra Makefile
+-include vendor/extra/common.mk
+
 # Add our overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/nameless/overlay/common
