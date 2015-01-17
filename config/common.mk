@@ -1,18 +1,7 @@
 PRODUCT_BRAND ?= nameless
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 # Versioning
 include vendor/nameless/config/version.mk
-
-# we are nameless rom
-PRODUCT_COPY_FILES += \
-    vendor/nameless/config/permissions/org.namelessrom.android.xml:system/etc/permissions/org.namelessrom.android.xml
-
-# and we do support cm features
-PRODUCT_COPY_FILES += \
-    vendor/nameless/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
 # bootanimation
 ifeq ($(PRODUCT_NO_BOOTANIMATION),)
@@ -92,12 +81,11 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# Enable SIP and VoIP on all targets
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-
 # Add apn's
 include vendor/nameless/config/apns.mk
+
+# Add features and permissions
+include vendor/nameless/config/features.mk
 
 # Additional packages
 include vendor/nameless/config/packages.mk

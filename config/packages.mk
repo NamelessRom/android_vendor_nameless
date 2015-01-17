@@ -1,18 +1,24 @@
+# Required packages
+PRODUCT_PACKAGES += \
+    BluetoothExt \
+    LatinIME \
+
 # Additional packages
 PRODUCT_PACKAGES += \
     Basic \
-    LatinIME \
     LockClock \
     PhotoTable \
-    SoundRecorder
+    SoundRecorder \
+    libemoji \
 
-# Additional apps
+# Optional apps
 PRODUCT_PACKAGES += \
     AudioFX \
     DeviceControl \
     Eleven \
     NamelessOTA \
     Screencast \
+    Terminal \
 
 # Launcher
 PRODUCT_PACKAGES += \
@@ -28,6 +34,7 @@ PRODUCT_PACKAGES += \
 
 # Additional tools
 PRODUCT_PACKAGES += \
+    libsepol \
     openvpn \
     e2fsck \
     mke2fs \
@@ -40,10 +47,22 @@ PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
     ntfsfix \
     ntfs-3g \
     sqlite3 \
-    libemoji
+
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh \
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -61,26 +80,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     su \
 
-# Terminal
-PRODUCT_PACKAGES += \
-    Terminal \
-
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
-    libnamparser
+    libnamparser \
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
-    org.cyanogenmod.hardware.xml
+    org.cyanogenmod.hardware.xml \
 
 # Nameless Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
     org.namelessrom.hardware \
-    org.namelessrom.hardware.xml
+    org.namelessrom.hardware.xml \
 
 ######
 # Additional Extras, enabled via flags
