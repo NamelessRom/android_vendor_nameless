@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
 # Launcher
 PRODUCT_PACKAGES += \
     CMHome \
-    CustomLauncher3 \
+    Perception \
 
 # Some live wallpapers
 PRODUCT_PACKAGES += \
