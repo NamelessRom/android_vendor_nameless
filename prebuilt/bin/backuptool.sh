@@ -7,36 +7,6 @@ export C=/tmp/backupdir
 export S=/system
 export V=5.0
 
-props_persist="
-net.dns1
-net.dns2
-net.rmnet0.dns1
-net.rmnet0.dns2
-ro.nameless.debug
-ro.nameless.secret
-ro.sf.lcd_density
-qemu.sf.lcd_density
-"
-
-props_backup()
-{
-    rm -f "$C/prop"
-    for prop in $props_persist; do
-        grep "^$prop=" "$S/build.prop" >> "$C/prop"
-    done
-}
-
-props_restore()
-{
-    local sedargs
-    sedargs="-i"
-    for prop in $(cat $C/prop); do
-        k=$(echo $prop | cut -d'=' -f1)
-        sedargs="$sedargs s/^$k=.*/$prop/"
-    done
-    sed $sedargs "$S/build.prop"
-}
-
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
 
@@ -53,31 +23,13 @@ restore_addon_d() {
   rm -rf /tmp/addon.d/
 }
 
-# Backup Xposed Framework (bin/app_process)
-xposed_backup()
-{
-	if ( grep -ciE ".*with Xposed support \\(version (.+)\\).*" /system/bin/app_process )
-		then
-			cp /system/bin/app_process /tmp/backupdir/
-	fi
-}
-
-# Restore Xposed Framework (bin/app_process)
-xposed_restore()
-{
-	if [ -f /tmp/backupdir/app_process ]
-		then
-			mv /system/bin/app_process /system/bin/app_process.orig
-			cp /tmp/backupdir/app_process /system/bin/
-	fi
-}
-
 # Proceed only if /system is the expected major and minor version
 check_prereq() {
 if ( ! grep -q "^ro.build.version.release=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
-  exit 127
+  return 0
 fi
+return 1
 }
 
 check_blacklist() {
@@ -91,6 +43,24 @@ check_blacklist() {
   fi
 }
 
+check_whitelist() {
+  found=0
+  if [ -f /system/addon.d/whitelist ];then
+      ## forcefully keep any version-independent stuff
+      cd /$1/addon.d/
+      for f in *sh; do
+          s=$(md5sum $f | awk {'print $1'})
+          grep -q $s /system/addon.d/whitelist
+          if [ $? -eq 0 ]; then
+              found=1
+          else
+              rm -f $f
+          fi
+      done
+  fi
+  return $found
+}
+
 # Execute /system/addon.d/*.sh scripts with $1 parameter
 run_stage() {
 for script in $(find /tmp/addon.d/ -name '*.sh' |sort -n); do
@@ -101,9 +71,11 @@ done
 case "$1" in
   backup)
     mkdir -p $C
-    props_backup
-    xposed_backup
-    check_prereq
+    if check_prereq; then
+        if check_whitelist system; then
+            exit 127
+        fi
+    fi
     check_blacklist system
     preserve_addon_d
     run_stage pre-backup
@@ -111,9 +83,11 @@ case "$1" in
     run_stage post-backup
   ;;
   restore)
-    props_restore
-    xposed_restore
-    check_prereq
+    if check_prereq; then
+        if check_whitelist tmp; then
+            exit 127
+        fi
+    fi
     check_blacklist tmp
     run_stage pre-restore
     run_stage restore
