@@ -4,6 +4,7 @@ import /init.superuser.rc
 on init
     export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo
+    export TERM linux
 
     # Disabled virtual memory randomization
     # (if randomization is enabled the AEM-JIT will have a lower cache hit rate)
