@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     PhotoTable \
     SoundRecorder \
     libemoji \
+    WhisperPush \
 
 # Optional apps
 PRODUCT_PACKAGES += \
