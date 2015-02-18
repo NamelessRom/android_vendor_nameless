@@ -14,4 +14,11 @@
     <allow-all />
     <seinfo value="release" />
   </signer>
+
+  <!-- NamelessOTA -->
+  <signer signature="@RELEASE" >
+    <package name="org.namelessrom.ota" >
+      <seinfo value="otaupdater" />
+    </package>
+  </signer>
 </policy>
