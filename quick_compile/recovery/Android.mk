@@ -14,5 +14,5 @@
 #
 
 ifneq ($(ONE_SHOT_MAKEFILE),)
-    ALL_MODULES += recoveryimage
+    ALL_MODULES += ramdisk recoveryimage
 endif

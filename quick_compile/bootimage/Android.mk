@@ -20,5 +20,5 @@
 
 # Guard so that it isn't included in builds not invoked via mm/mmm
 ifneq ($(ONE_SHOT_MAKEFILE),)
-ALL_MODULES += bootimage
+ALL_MODULES += bootimage ramdisk
 endif
