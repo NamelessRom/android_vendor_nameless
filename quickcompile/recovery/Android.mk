@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2014 The NamelessRom Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,12 +13,8 @@
 # limitations under the License.
 #
 
-# This is a quick hack to allow building a bootimage quickly without
-# needing to parse all the makefiles in the tree.
-# 'mmm mka vendor/cde/bootimage'
-# Is MUCH, MUCH faster than 'mka bootimage'
-
-# Guard so that it isn't included in builds not invoked via mm/mmm
 ifneq ($(ONE_SHOT_MAKEFILE),)
-ALL_MODULES += bootimage
+    ALL_MODULES += ramdisk recoveryimage
+else
+    include $(call all-subdir-makefiles)
 endif
