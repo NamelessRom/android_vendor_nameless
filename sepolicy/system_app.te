@@ -10,3 +10,6 @@ allow system_app media_rw_data_file:file create_file_perms;
 
 # Allow to set properties
 allow system_app default_prop:property_service set;
+
+# Allow to read thermal sysfs
+allow system_app sysfs_thermal:file rw_file_perms;
