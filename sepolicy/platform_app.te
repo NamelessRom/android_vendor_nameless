@@ -1,0 +1,4 @@
+# Allow to read thermal sysfs
+allow platform_app sysfs_thermal:dir search;
+allow platform_app sysfs_thermal:file read;
+allow platform_app sysfs_thermal:lnk_file read;
