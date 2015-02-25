@@ -37,7 +37,7 @@ endif
 NAMELESS_VERSION := $(ROM_VERSION)
 
 # Apply it to build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.modversion=NamelessRom-$(ROM_VERSION) \
     ro.nameless.version=$(ROM_VERSION) \
     ro.nameless.date=$(shell date +"%Y%m%d") \
