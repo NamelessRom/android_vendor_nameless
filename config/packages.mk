@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     Eleven \
     NamelessOTA \
     Screencast \
+    NamelessSetupWizard \
     Terminal \
 
 # Launcher
