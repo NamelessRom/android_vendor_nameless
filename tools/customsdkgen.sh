@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SDK_VER=21
-CUSTOM_VER=321
+CUSTOM_VER=121
 CUSTOM_NAME=nameless
 
 if [ -z "$OUT" ]; then
@@ -19,8 +19,6 @@ SERVICESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/com.android.services.tele
 
 OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes.jar
 VOLLEYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/volley_intermediates/classes.jar
-CMHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.cyanogenmod.hardware_intermediates/classes.jar
-NAMELESSHWJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/org.namelessrom.hardware_intermediates/classes.jar
 
 if [ ! -f $STUBJAR ]; then
 make $STUBJAR
@@ -44,12 +42,6 @@ fi
 if [ ! -f $VOLLEYJAR ]; then
 make $OKHTTPJAR
 fi
-if [ ! -f $CMHWJAR ]; then
-make $CMHWJAR
-fi
-if [ ! -f $NAMELESSHWJAR ]; then
-make $NAMELESSHWJAR
-fi
 
 TMP_DIR=${OUTDIR}/tmp
 mkdir -p ${TMP_DIR}
@@ -61,8 +53,6 @@ $(cd ${TMP_DIR}; jar -xf ${SERVICESJAR})
 
 $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
 $(cd ${TMP_DIR}; jar -xf ${VOLLEYJAR})
-$(cd ${TMP_DIR}; jar -xf ${CMHWJAR})
-$(cd ${TMP_DIR}; jar -xf ${NAMELESSHWJAR})
 
 jar -cf ${OUTDIR}/android.jar -C ${TMP_DIR}/ .
 
@@ -81,8 +71,7 @@ fi
 cp -rf "${ANDROID_HOME}/platforms/android-${SDK_VER}" "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}"
 rm -f "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/android.jar"
 cp -f "${OUTDIR}/android.jar" "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/android.jar"
-sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk=321/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
-sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release=5.0-nameless/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
-sed -i 's/AndroidVersion.ApiLevel=21/AndroidVersion.ApiLevel=321/' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/source.properties"
-sed -i 's/Pkg.Desc=/Pkg.Desc=NamelessROM /' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/source.properties"
-echo "New SDK created. To build using $CUSTOM_NAME sdk select sdk version $CUSTOM_VER in Studio/ADT"
+sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
+sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release='${SDK_VER}'-'${CUSTOM_NAME}'/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
+sed -i 's/AndroidVersion\.ApiLevel='${SDK_VER}'/AndroidVersion\.ApiLevel='${CUSTOM_VER}'/' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/source.properties"
+echo "New SDK created. To build using ${CUSTOM_NAME} sdk select sdk version ${CUSTOM_VER} in Android Studio/ADT"
