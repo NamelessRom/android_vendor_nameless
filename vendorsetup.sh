@@ -12,7 +12,7 @@ add_lunch_combo nameless_bacon-userdebug
 ## F
 add_lunch_combo nameless_find7-userdebug
 ## G
-#add_lunch_combo nameless_galaxysl-userdebug
+add_lunch_combo nameless_galaxysl-userdebug
 #add_lunch_combo nameless_galaxysmtd-userdebug
 add_lunch_combo nameless_grouper-userdebug
 ## H
