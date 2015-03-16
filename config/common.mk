@@ -65,9 +65,11 @@ PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/nameless/prebuilt/bin/sysinit:system/bin/sysinit
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
+endif
 
 # Init script file with nameless extras
 PRODUCT_COPY_FILES += \
