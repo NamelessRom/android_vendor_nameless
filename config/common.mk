@@ -72,6 +72,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/init.local.rc:root/init.nameless.rc
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/nameless/prebuilt/etc/supersu.zip:supersu/supersu.zip
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/nameless/prebuilt/media/LMprec_508.emd:system/media/LMprec_508.emd \

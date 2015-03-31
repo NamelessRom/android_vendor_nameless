@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver \
 
-# Superuser
-PRODUCT_PACKAGES += \
-    su \
-
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
