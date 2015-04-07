@@ -18,7 +18,6 @@ PRODUCT_PACKAGES += \
     DeviceControl \
     Eleven \
     NamelessOTA \
-    NamelessSetupWizard \
     Screencast \
     Terminal \
 
