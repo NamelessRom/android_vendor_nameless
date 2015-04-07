@@ -41,10 +41,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
 # enable ADB authentication if not on eng build
-#ifneq ($(TARGET_BUILD_VARIANT),eng)
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-#endif
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=1
+endif
 
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
