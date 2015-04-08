@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SDK_VER=21
-CUSTOM_VER=121
+SDK_VER=22
+CUSTOM_VER=122
 CUSTOM_NAME=nameless
 
 if [ -z "$OUT" ]; then
