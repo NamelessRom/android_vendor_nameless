@@ -20,12 +20,16 @@ endif
 # general properties
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
     persist.sys.root_access=1
+
+# urls, links etc
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.nameless.ota.download=https://sourceforge.net/projects/namelessrom/files/n-2.1/%s/ \
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
