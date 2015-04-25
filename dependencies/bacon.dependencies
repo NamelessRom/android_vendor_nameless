@@ -3,18 +3,18 @@
         "remote":      "github",
         "repository":  "NamelessRom/android_device_oneplus_bacon",
         "target_path": "device/oneplus/bacon",
-        "revision":    "n-2.0"
+        "revision":    "n-2.1"
     },
     {
         "remote":      "github",
         "repository":  "CrazyWeasel/proprietary_vendor_oppo",
         "target_path": "vendor/oppo",
-        "revision":    "n-2.0"
+        "revision":    "n-2.1"
     },
     {
         "remote":      "github",
         "repository":  "CrazyWeasel/proprietary_vendor_oneplus",
         "target_path": "vendor/oneplus",
-        "revision":    "n-2.0"
+        "revision":    "n-2.1"
     }
 ]
