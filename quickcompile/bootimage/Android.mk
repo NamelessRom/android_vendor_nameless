@@ -15,7 +15,8 @@
 
 # This is a quick hack to allow building a bootimage quickly without
 # needing to parse all the makefiles in the tree.
-# 'mmm mka vendor/cde/bootimage'
+# 'mmm kernel' or
+# 'mmm vendor/nameless/quickcompile/bootimage'
 # Is MUCH, MUCH faster than 'mka bootimage'
 
 # Guard so that it isn't included in builds not invoked via mm/mmm
