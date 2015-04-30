@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
 # Additional packages
 PRODUCT_PACKAGES += \
     Basic \
+    CMFileManager \
     LockClock \
     PhotoTable \
     SoundRecorder \
