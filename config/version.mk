@@ -27,7 +27,7 @@ else
 ifeq ($(ROM_BUILDTIME_LOCAL),y)
     DATE := $(shell date +%Y%m%d-%H%M%z)
 else
-    DATE := $(shell date -u +%Y%m%d)
+    DATE := $(shell date +%Y%m%d)
 endif
 endif # BUILDTYPE_RELEASE
 
