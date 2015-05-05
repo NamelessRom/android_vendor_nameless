@@ -1,3 +1,7 @@
 #!/system/bin/sh
+#
+# Print startup info
+#
+L="log -p i -t nameless"
 
-echo "=== Nameless Rom ==="
+$L "=== Nameless Rom ==="
