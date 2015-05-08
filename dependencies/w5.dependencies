@@ -1,0 +1,20 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_lge_w5",
+        "target_path": "device/lge/w5",
+        "revision":    "n-2.1"
+    },
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_lge_msm8610-common",
+        "target_path": "device/lge/msm8610-common",
+        "revision":    "n-2.1"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CrazyWeasel/proprietary_vendor_lge",
+        "target_path": "vendor/lge",
+        "revision":    "n-2.1"
+    }
+]
