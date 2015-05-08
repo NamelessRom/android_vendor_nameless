@@ -47,3 +47,5 @@ add_lunch_combo nameless_p880-userdebug
 #add_lunch_combo nameless_tilapia-userdebug
 ## V
 #add_lunch_combo nameless_vs980-userdebug
+## W
+add_lunch_combo nameless_w5-userdebug
