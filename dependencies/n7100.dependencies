@@ -3,12 +3,12 @@
         "remote":      "github",
         "repository":  "NamelessRom/android_device_samsung_n7100",
         "target_path": "device/samsung/n7100",
-        "revision":    "n-2.0"
+        "revision":    "n-2.1"
     },
     {
         "remote":      "github",
         "repository":  "CrazyWeasel/proprietary_vendor_samsung",
         "target_path": "vendor/samsung",
-        "revision":    "n-2.0"
+        "revision":    "n-2.1"
     }
 ]
