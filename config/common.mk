@@ -42,12 +42,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
-# throw in everything at dex2oat
-# https://android.googlesource.com/platform/art/+/android-5.1.0_r5/dex2oat/dex2oat.cc
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.image-dex2oat-filter=everything \
-    dalvik.vm.dex2oat-filter=everything \
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
