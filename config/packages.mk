@@ -17,7 +17,6 @@ PRODUCT_PACKAGES += \
 # Optional apps
 PRODUCT_PACKAGES += \
     AudioFX \
-    DeviceControl \
     Eleven \
     NamelessOTA \
     NamelessSetupWizard \
@@ -101,6 +100,12 @@ PRODUCT_PACKAGES += \
 ######
 # Additional Extras, enabled via flags
 ######
+
+# Gradle packages
+ifneq($(SKIP_GRADLE_APP_BUILDS),true)
+PRODUCT_PACKAGES += \
+    DeviceControl
+endif
 
 # debugging / development apps
 ifeq ($(USE_ALL_DEVELOPMENT),true)
