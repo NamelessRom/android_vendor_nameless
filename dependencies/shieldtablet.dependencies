@@ -1,0 +1,14 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_nvidia_shieldtablet",
+        "target_path": "device/nvidia/shieldtablet",
+        "revision":    "n-2.1"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CrazyWeasel/proprietary_vendor_nvidia",
+        "target_path": "vendor/nvidia",
+        "revision":    "n-2.1"
+    }
+]
