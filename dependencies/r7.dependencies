@@ -1,0 +1,14 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_oppo_r7",
+        "target_path": "device/oppo/r7",
+        "revision":    "n-2.1"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CrazyWeasel/proprietary_vendor_oppo",
+        "target_path": "vendor/oppo",
+        "revision":    "n-2.1"
+    }
+]
