@@ -43,6 +43,8 @@ add_lunch_combo nameless_n3-userdebug
 #add_lunch_combo nameless_p768-userdebug
 add_lunch_combo nameless_p880-userdebug
 #add_lunch_combo nameless_p970-userdebug
+## R
+add_lunch_combo nameless_r7-userdebug
 ## S
 add_lunch_combo nameless_shieldtablet-userdebug
 ## T
