@@ -113,6 +113,9 @@ include vendor/nameless/config/twrp_common.mk
 # CM platform sdk
 include vendor/nameless/config/cm_platform_sdk.mk
 
+# Prebuilts
+include vendor/nameless/prebuilt/prebuilts.mk
+
 # Private Makefile
 -include vendor/nameless/private/common.mk
 
