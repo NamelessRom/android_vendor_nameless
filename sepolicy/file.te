@@ -14,3 +14,6 @@ type recovery_cache_file, file_type, mlstrustedobject;
 
 # KCAL
 type sysfs_devices_system_kcal, file_type, sysfs_type;
+
+# Persistent property storage
+type persist_property_file, file_type;
