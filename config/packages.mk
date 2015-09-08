@@ -35,6 +35,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     PhaseBeam \
     PhotoPhase \
+    CMSettingsProvider \
+    CMResolver \
 
 # Additional tools
 PRODUCT_PACKAGES += \
