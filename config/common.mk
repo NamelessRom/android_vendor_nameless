@@ -43,6 +43,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.image-dex2oat-filter=everything
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
 # enable ADB authentication if not on eng build
