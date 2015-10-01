@@ -75,6 +75,7 @@ PRODUCT_PACKAGES += \
     vim \
     zip \
     unrar \
+    curl \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
