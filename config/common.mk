@@ -89,11 +89,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nameless/prebuilt/etc/supersu.zip:supersu/supersu.zip
 
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/nameless/prebuilt/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/nameless/prebuilt/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
