@@ -6,13 +6,13 @@ PRODUCT_PACKAGES += \
 
 # Additional packages
 PRODUCT_PACKAGES += \
-    Basic \
     CMFileManager \
     LockClock \
     PhotoTable \
-    SoundRecorder \
     libemoji \
-    WhisperPush \
+    CMSettingsProvider \
+    CMResolver \
+    ExactCalculator \
 
 # Optional apps
 PRODUCT_PACKAGES += \
@@ -26,7 +26,6 @@ PRODUCT_PACKAGES += \
 
 # Launcher
 PRODUCT_PACKAGES += \
-    CMHome \
     Perception \
 
 # Some live wallpapers
@@ -35,8 +34,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     PhaseBeam \
     PhotoPhase \
-    CMSettingsProvider \
-    CMResolver \
 
 # Additional tools
 PRODUCT_PACKAGES += \
@@ -79,7 +76,7 @@ PRODUCT_PACKAGES += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    Mms \
+    messaging \
     Stk \
     CellBroadcastReceiver \
 

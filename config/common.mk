@@ -106,7 +106,7 @@ include vendor/nameless/config/features.mk
 # Additional packages
 include vendor/nameless/config/packages.mk
 
-# T-Mobile theme engine
+# Theme engine
 include vendor/nameless/config/themes_common.mk
 
 # TWRP common
