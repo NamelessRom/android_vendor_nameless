@@ -1,5 +1,10 @@
 # Versioning of NamelessRom
 
+PRODUCT_VERSION_MAJOR = 3
+PRODUCT_VERSION_MINOR = 0
+
+PRODUCT_VERSION_FINAL = $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
+
 ifneq ($(BUILD_BUILDTYPE),)
     ROM_BUILDTYPE = $(BUILD_BUILDTYPE)
 else
@@ -19,7 +24,7 @@ TARGET_PRODUCT_SHORT := $(subst nameless_,,$(TARGET_PRODUCT_SHORT))
 
 # Build the final version string
 ifdef BUILDTYPE_RELEASE
-    ROM_VERSION := $(PLATFORM_VERSION)-$(TARGET_PRODUCT_SHORT)
+    ROM_VERSION := $(PRODUCT_VERSION_FINAL)-$(TARGET_PRODUCT_SHORT)
 else
 ifneq ($(ROM_BUILDTIME_CUSTOM),)
     DATE := $(ROM_BUILDTIME_CUSTOM)
@@ -31,14 +36,14 @@ else
 endif
 endif # BUILDTYPE_RELEASE
 
-ROM_VERSION := $(PLATFORM_VERSION)-$(DATE)-$(TARGET_PRODUCT_SHORT)
+ROM_VERSION := $(PRODUCT_VERSION_FINAL)-$(DATE)-$(TARGET_PRODUCT_SHORT)
 endif
 
 NAMELESS_VERSION := $(ROM_VERSION)
 
 # Apply it to build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=NamelessRom-$(ROM_VERSION) \
+    ro.modversion=n-$(ROM_VERSION) \
     ro.nameless.version=$(ROM_VERSION) \
     ro.nameless.date=$(shell date +"%Y%m%d") \
     ro.nameless.releasetype=$(ROM_BUILDTYPE) \
