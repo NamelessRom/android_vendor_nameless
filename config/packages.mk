@@ -53,9 +53,9 @@ PRODUCT_PACKAGES += \
     mkfs.f2fs \
     fsck.f2fs \
     fibmap.f2fs \
-    ntfsfix \
-    ntfs-3g \
-    sqlite3 \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs \
 
 # Openssh
 PRODUCT_PACKAGES += \
