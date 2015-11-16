@@ -46,7 +46,6 @@ PRODUCT_PACKAGES += \
     nano \
     htop \
     powertop \
-    lsof \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat \
@@ -56,6 +55,7 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     fsck.ntfs \
     mount.ntfs \
+    pigz \
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -69,10 +69,13 @@ PRODUCT_PACKAGES += \
 
 # Extra tools
 PRODUCT_PACKAGES += \
+    7z \
+    bzip2 \
+    curl \
+    unrar \
+    unzip \
     vim \
     zip \
-    unrar \
-    curl \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
