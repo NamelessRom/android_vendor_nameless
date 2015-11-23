@@ -4,6 +4,14 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Profiles \
 
+# Nameless packages
+PRODUCT_PACKAGES += \
+    DeviceControl \
+    NamelessOTA \
+    NamelessSettingsProvider \
+    NamelessSetupWizard \
+    Screencast \
+
 # Additional packages
 PRODUCT_PACKAGES += \
     CMFileManager \
@@ -17,11 +25,7 @@ PRODUCT_PACKAGES += \
 # Optional apps
 PRODUCT_PACKAGES += \
     AudioFX \
-    DeviceControl \
     Eleven \
-    NamelessOTA \
-    NamelessSetupWizard \
-    Screencast \
     Terminal \
 
 # Launcher
@@ -104,6 +108,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml \
+
+# Nameless Platform Library
+PRODUCT_PACKAGES += \
+    org.namelessrom.platform \
+    org.namelessrom.platform.xml \
 
 ######
 # Additional Extras, enabled via flags
