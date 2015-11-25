@@ -12,6 +12,8 @@ add_lunch_combo nameless_hammerhead-userdebug
 ## N
 #add_lunch_combo nameless_n3-userdebug
 #add_lunch_combo nameless_n7100-userdebug
+## O
+add_lunch_combo nameless_oneplus2-userdebug
 ## P
 #add_lunch_combo nameless_p880-userdebug
 ## R
