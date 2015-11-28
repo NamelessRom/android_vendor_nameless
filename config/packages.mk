@@ -114,6 +114,14 @@ PRODUCT_PACKAGES += \
     org.namelessrom.platform \
     org.namelessrom.platform.xml \
 
+# These packages are excluded from user builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    procmem \
+    procrank \
+    su
+endif
+
 ######
 # Additional Extras, enabled via flags
 ######
@@ -122,8 +130,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(USE_ALL_DEVELOPMENT),true)
 PRODUCT_PACKAGES += \
     Development \
-    procmem \
-    procrank \
     gdbserver \
     micro_bench \
     oprofiled \
