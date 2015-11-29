@@ -3,12 +3,12 @@
         "remote":      "github",
         "repository":  "NamelessRom/android_device_lge_hammerhead",
         "target_path": "device/lge/hammerhead",
-        "revision":    "n-3.0"
+        "revision":    "n-3.0-caf"
     },
     {
         "remote":      "github",
         "repository":  "CrazyWeasel/proprietary_vendor_lge",
         "target_path": "vendor/lge",
-        "revision":    "n-3.0"
+        "revision":    "n-3.0-caf"
     }
 ]
