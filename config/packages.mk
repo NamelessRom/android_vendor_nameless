@@ -39,6 +39,10 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     PhotoPhase \
 
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
+
 # Additional tools
 PRODUCT_PACKAGES += \
     libsepol \
