@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SDK_VER=22
-CUSTOM_VER=122
+SDK_VER=23
+CUSTOM_VER=123
 CUSTOM_NAME=nameless
 
 if [ -z "$OUT" ]; then
@@ -15,12 +15,9 @@ STUBJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android_stubs_current_interme
 FRAMEWORKJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/framework_intermediates/classes.jar
 TELEPHONYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/telephony-common_intermediates/classes.jar
 COMMONJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android-common_intermediates/classes.jar
-POLICYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/android.policy_intermediates/classes.jar
 CORESERVICESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/services_intermediates/classes.jar
 SERVICESJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/com.android.services.telephony.common_intermediates/classes.jar
-
 OKHTTPJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/okhttp_intermediates/classes.jar
-VOLLEYJAR=${OUTDIR}/target/common/obj/JAVA_LIBRARIES/volley_intermediates/classes.jar
 
 if [ ! -f $STUBJAR ]; then
 make $STUBJAR
@@ -34,20 +31,13 @@ fi
 if [ ! -f $COMMONJAR ]; then
 make $COMMONJAR
 fi
-if [ ! -f $POLICYJAR ]; then
-make $POLICYJAR
-fi
 if [ ! -f $CORESERVICESJAR ]; then
 make $CORESERVICESJAR
 fi
 if [ ! -f $SERVICESJAR ]; then
 make $SERVICESJAR
 fi
-
 if [ ! -f $OKHTTPJAR ]; then
-make $OKHTTPJAR
-fi
-if [ ! -f $VOLLEYJAR ]; then
 make $OKHTTPJAR
 fi
 
@@ -57,12 +47,9 @@ $(cd ${TMP_DIR}; jar -xf ${STUBJAR})
 $(cd ${TMP_DIR}; jar -xf ${FRAMEWORKJAR})
 $(cd ${TMP_DIR}; jar -xf ${TELEPHONYJAR})
 $(cd ${TMP_DIR}; jar -xf ${COMMONJAR})
-$(cd ${TMP_DIR}; jar -xf ${POLICYJAR})
 $(cd ${TMP_DIR}; jar -xf ${CORESERVICESJAR})
 $(cd ${TMP_DIR}; jar -xf ${SERVICESJAR})
-
 $(cd ${TMP_DIR}; jar -xf ${OKHTTPJAR})
-$(cd ${TMP_DIR}; jar -xf ${VOLLEYJAR})
 
 jar -cf ${OUTDIR}/android.jar -C ${TMP_DIR}/ .
 
@@ -78,10 +65,10 @@ if [ -z "$ANDROID_HOME" ]; then
     fi
 fi
 
-cp -rf "${ANDROID_HOME}/platforms/android-${SDK_VER}" "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}"
-rm -f "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/android.jar"
-cp -f "${OUTDIR}/android.jar" "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/android.jar"
-sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
-sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release='${SDK_VER}'-'${CUSTOM_NAME}'/g' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/build.prop"
-sed -i 's/AndroidVersion\.ApiLevel='${SDK_VER}'/AndroidVersion\.ApiLevel='${CUSTOM_VER}'/' "${ANDROID_HOME}/platforms/android-${SDK_VER}-${CUSTOM_NAME}/source.properties"
+cp -rf "${ANDROID_HOME}/platforms/android-${SDK_VER}" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}"
+rm -f "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/android.jar"
+cp -f "${OUTDIR}/android.jar" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/android.jar"
+sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/build.prop"
+sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/build.prop"
+sed -i 's/AndroidVersion\.ApiLevel='${SDK_VER}'/AndroidVersion\.ApiLevel='${CUSTOM_VER}'/' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/source.properties"
 echo "New SDK created. To build using ${CUSTOM_NAME} sdk select sdk version ${CUSTOM_VER} in Android Studio/ADT"
