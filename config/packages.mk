@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
 
 # Nameless Platform Library
 PRODUCT_PACKAGES += \
+    org.namelessrom.platform-res \
     org.namelessrom.platform \
     org.namelessrom.platform.xml \
 
