@@ -49,4 +49,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nameless.releasetype=$(ROM_BUILDTYPE) \
 
 # security patch level
-PLATFORM_SECURITY_PATCH := 2015-11-01
+PLATFORM_SECURITY_PATCH := 2015-12-01
