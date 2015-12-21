@@ -138,7 +138,9 @@ PRODUCT_PACKAGES += \
     gdbserver \
     micro_bench \
     oprofiled \
-    strace
+    strace \
+    perf \
+
 endif
 
 # Live Wallpapers
