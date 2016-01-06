@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
 # Extra tools
 PRODUCT_PACKAGES += \
     7z \
+    lib7z \
     bzip2 \
     curl \
     unrar \
