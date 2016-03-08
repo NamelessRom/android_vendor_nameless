@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
     CMSettingsProvider \
     CMResolver \
     ExactCalculator \
+    LiveLockScreenService \
 
 # Optional apps
 PRODUCT_PACKAGES += \
