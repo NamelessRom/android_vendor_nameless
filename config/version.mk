@@ -47,6 +47,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nameless.version=$(ROM_VERSION) \
     ro.nameless.date=$(shell date +"%Y%m%d") \
     ro.nameless.releasetype=$(ROM_BUILDTYPE) \
-
-# security patch level
-PLATFORM_SECURITY_PATCH := 2016-01-01
