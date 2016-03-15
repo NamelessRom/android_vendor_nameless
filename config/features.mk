@@ -7,6 +7,7 @@ PRODUCT_COPY_FILES += \
     vendor/nameless/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
     vendor/nameless/config/permissions/org.cyanogenmod.livelockscreen.xml:system/etc/permissions/org.cyanogenmod.livelockscreen.xml \
     vendor/nameless/config/permissions/org.cyanogenmod.statusbar.xml:system/etc/permissions/org.cyanogenmod.statusbar.xml \
+    vendor/nameless/config/permissions/org.cyanogenmod.profiles.xml:system/etc/permissions/org.cyanogenmod.profiles.xml \
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
