@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     CMResolver \
     ExactCalculator \
     LiveLockScreenService \
+    WeatherProvider \
 
 # Optional apps
 PRODUCT_PACKAGES += \
