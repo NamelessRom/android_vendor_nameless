@@ -116,12 +116,6 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml \
 
-# Nameless Platform Library
-PRODUCT_PACKAGES += \
-    org.namelessrom.platform-res \
-    org.namelessrom.platform \
-    org.namelessrom.platform.xml \
-
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
@@ -134,8 +128,8 @@ endif
 # Additional Extras, enabled via flags
 ######
 
-# debugging / development apps
-ifeq ($(USE_ALL_DEVELOPMENT),true)
+# Debugging / Development
+ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     Development \
     gdbserver \
