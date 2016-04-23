@@ -34,6 +34,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Perception \
 
+# JNI Libraries
+PRODUCT_PACKAGES += \
+    libcmsdk_platform_jni \
+
 # Some live wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
