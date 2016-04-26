@@ -1,6 +1,7 @@
 ## B
 #add_lunch_combo nameless_bacon-userdebug
 ## F
+add_lunch_combo nameless_f1f-userdebug
 add_lunch_combo nameless_find7-userdebug
 ## H
 add_lunch_combo nameless_hammerhead-userdebug
