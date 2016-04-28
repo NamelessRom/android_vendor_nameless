@@ -27,3 +27,5 @@ add_lunch_combo nameless_r7plus-userdebug
 #add_lunch_combo nameless_tomato-userdebug
 ## W
 #add_lunch_combo nameless_w5-userdebug
+## Z
+add_lunch_combo nameless_zerofltexx-userdebug
