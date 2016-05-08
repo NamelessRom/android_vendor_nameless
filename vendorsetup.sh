@@ -8,6 +8,8 @@ add_lunch_combo nameless_hammerhead-userdebug
 ## I
 add_lunch_combo nameless_i9300-userdebug
 #add_lunch_combo nameless_i9305-userdebug
+## L
+add_lunch_combo nameless_lettuce-userdebug
 ## M
 add_lunch_combo nameless_mako-userdebug
 ## N
