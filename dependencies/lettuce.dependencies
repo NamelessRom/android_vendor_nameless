@@ -1,0 +1,14 @@
+[
+    {
+        "remote":      "github",
+        "repository":  "NamelessRom/android_device_yu_lettuce",
+        "target_path": "device/yu/lettuce",
+        "revision":    "n-3.0"
+    },
+    {
+        "remote":      "github",
+        "repository":  "CrazyWeasel/proprietary_vendor_yu",
+        "target_path": "vendor/yu",
+        "revision":    "n-3.0"
+    }
+]
