@@ -21,4 +21,7 @@
 
     <!-- Enable notification counters in statusbar -->
     <integer name="def_notif_count">1</integer>
+
+    <!-- Default for Settings.Global.SEND_ACTION_APP_ERROR -->
+    <integer name="def_send_action_app_error">1</integer>
 </resources>
