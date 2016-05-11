@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
+    DataUsageProvider \
 
 # Optional apps
 PRODUCT_PACKAGES += \
