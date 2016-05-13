@@ -6,11 +6,15 @@ PRODUCT_PACKAGES += \
 
 # Nameless packages
 PRODUCT_PACKAGES += \
-    DeviceControl \
     NamelessOTA \
     NamelessSettingsProvider \
     NamelessSetupWizard \
     Screencast \
+
+# Nameless prebuilt packages
+PRODUCT_PACKAGES += \
+    DeviceControl \
+    NamelessServices \
 
 # Additional packages
 PRODUCT_PACKAGES += \
