@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SDK_VER=23
-CUSTOM_VER=123
+CUSTOM_VER=23
 CUSTOM_NAME=nameless
 
 if [ -z "$OUT" ]; then
@@ -65,10 +65,10 @@ if [ -z "$ANDROID_HOME" ]; then
     fi
 fi
 
-cp -rf "${ANDROID_HOME}/platforms/android-${SDK_VER}" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}"
-rm -f "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/android.jar"
-cp -f "${OUTDIR}/android.jar" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/android.jar"
-sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/build.prop"
-sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/build.prop"
-sed -i 's/AndroidVersion\.ApiLevel='${SDK_VER}'/AndroidVersion\.ApiLevel='${CUSTOM_VER}'/' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}/source.properties"
+cp -rf "${ANDROID_HOME}/platforms/android-${SDK_VER}" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}"
+rm -f "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}/android.jar"
+cp -f "${OUTDIR}/android.jar" "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}/android.jar"
+sed -i 's/^ro\.build\.version\.sdk=.*/ro.build.version.sdk='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}/build.prop"
+sed -i 's/^ro\.build\.version\.release=.*/ro.build.version.release='${CUSTOM_VER}'/g' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}/build.prop"
+sed -i 's/AndroidVersion\.ApiLevel='${SDK_VER}'/AndroidVersion\.ApiLevel='${CUSTOM_VER}'/' "${ANDROID_HOME}/platforms/android-${CUSTOM_VER}-${CUSTOM_NAME}/source.properties"
 echo "New SDK created. To build using ${CUSTOM_NAME} sdk select sdk version ${CUSTOM_VER} in Android Studio/ADT"
