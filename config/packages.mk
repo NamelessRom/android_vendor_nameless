@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     PhotoTable \
     libemoji \
+    SoundRecorder \
     CMSettingsProvider \
     CMResolver \
     ExactCalculator \
