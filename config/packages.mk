@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
+    WallpaperPicker \
 
 # Optional apps
 PRODUCT_PACKAGES += \
