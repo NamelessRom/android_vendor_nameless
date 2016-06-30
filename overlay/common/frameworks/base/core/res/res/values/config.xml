@@ -59,5 +59,8 @@
 
     <!-- Enable custom resolver, so we can supply suggestions if nothing can handle the intent -->
     <string name="config_customResolverActivity">org.cyanogenmod.resolver/org.cyanogenmod.resolver.ResolverActivity</string>
+
+    <!-- Whether to persist the notification for when a usb drive device is plugged in -->
+    <bool name="config_persistUsbDriveNotification">true</bool>
 </resources>
 
