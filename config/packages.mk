@@ -6,7 +6,6 @@ PRODUCT_PACKAGES += \
 
 # Nameless packages
 PRODUCT_PACKAGES += \
-    NamelessOTA \
     NamelessSettingsProvider \
     NamelessSetupWizard \
     Screencast \
