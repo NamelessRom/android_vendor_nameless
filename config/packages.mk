@@ -4,6 +4,10 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Profiles \
 
+# Required cm packages
+PRODUCT_PACKAGES += \
+    CMAudioService \
+
 # Nameless packages
 PRODUCT_PACKAGES += \
     NamelessOTA \
