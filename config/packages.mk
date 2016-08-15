@@ -3,6 +3,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     LatinIME \
     Profiles \
+    ThemeManagerService \
+    WeatherManagerService \
 
 # Required cm packages
 PRODUCT_PACKAGES += \
@@ -103,6 +105,10 @@ PRODUCT_PACKAGES += \
     vim \
     wget \
     zip \
+
+# Themes
+PRODUCT_PACKAGES += \
+    HexoLibre
 
 # Telephony packages
 PRODUCT_PACKAGES += \
